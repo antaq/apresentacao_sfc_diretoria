@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Abertura — SFC · Diretoria</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif; }
+.slide { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; overflow:hidden; background: linear-gradient(135deg, #001a33 0%, #003366 40%, #004d99 100%); }
+.font-montserrat { font-family:'Montserrat',sans-serif; }
+.gold { color: #FFD700; }
+.bg-gold { background-color: #FFD700; }
+.shape-right {
+  position:absolute; top:0; right:0; width:40%; height:100%;
+  background: linear-gradient(135deg, rgba(0,102,204,0.3) 0%, rgba(0,51,102,0.6) 100%);
+  clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+}
+.shape-circle {
+  position:absolute; bottom:-120px; right:-120px; width:500px; height:500px;
+  border-radius:50%; border:2px solid rgba(255,215,0,0.08);
+}
+.shape-circle2 {
+  position:absolute; bottom:-80px; right:-80px; width:400px; height:400px;
+  border-radius:50%; border:2px solid rgba(255,215,0,0.05);
+}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="shape-right"></div>
+  <div class="shape-circle"></div>
+  <div class="shape-circle2"></div>
+
+  <!-- Top accent lines -->
+  <div style="height:6px; background:#FFD700; width:100%;"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 flex flex-col justify-center flex-1 pl-24 pr-16">
+    <!-- Top tag -->
+    <div class="absolute top-16 left-24 flex items-center gap-3">
+      <div class="bg-gold" style="width:40px;height:3px;"></div>
+      <p class="text-gray-400 text-lg font-montserrat font-medium tracking-widest uppercase">Apresentação à Diretoria Colegiada</p>
+    </div>
+
+    <!-- Main title -->
+    <div class="mt-4">
+      <p class="font-montserrat font-black text-white leading-none" style="font-size:72px;">Projetos</p>
+      <p class="font-montserrat font-black gold leading-none mt-2" style="font-size:88px;">SFC 2026</p>
+      <div class="bg-gold mt-6 mb-8" style="width:100px; height:4px;"></div>
+      <p class="text-2xl text-gray-300 font-light leading-relaxed max-w-2xl">
+        Superintendência de Fiscalização e<br/>
+        Coordenação das Unidades Regionais
+      </p>
+    </div>
+
+    <!-- Info cards at bottom -->
+    <div class="flex gap-8 mt-12">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background:rgba(255,215,0,0.15);">
+          <i class="fas fa-calendar-alt gold text-lg"></i>
+        </div>
+        <div>
+          <p class="text-gray-400 text-sm uppercase tracking-wider font-semibold">Data</p>
+          <p class="text-white font-semibold text-lg">Agosto de 2026</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background:rgba(255,215,0,0.15);">
+          <i class="fas fa-map-marker-alt gold text-lg"></i>
+        </div>
+        <div>
+          <p class="text-gray-400 text-sm uppercase tracking-wider font-semibold">Local</p>
+          <p class="text-white font-semibold text-lg">Diretoria Colegiada — ANTAQ · Brasília/DF</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background:rgba(255,215,0,0.15);">
+          <i class="fas fa-bullseye gold text-lg"></i>
+        </div>
+        <div>
+          <p class="text-gray-400 text-sm uppercase tracking-wider font-semibold">Foco</p>
+          <p class="text-white font-semibold text-lg">Entregas Recentes & Projetos Prioritários</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="relative z-10 px-24 pb-10 flex justify-between items-end border-t border-gray-700 pt-6 mx-8">
+    <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2 text-gray-400 text-sm">
+        <i class="fas fa-globe"></i><span>www.gov.br/antaq</span>
+      </div>
+      <div class="flex items-center gap-2 text-gray-400 text-sm">
+        <i class="fab fa-linkedin"></i><span>linkedin.com/company/antaq</span>
+      </div>
+      <div class="flex items-center gap-2 text-gray-400 text-sm">
+        <i class="fab fa-instagram"></i><span>@antaq_oficial</span>
+      </div>
+    </div>
+    <p class="text-gray-500 text-sm font-montserrat font-bold tracking-wider">PPF 2025–2028</p>
+  </div>
+
+  <!-- Large watermark -->
+  <div class="absolute top-1/2 right-12 transform -translate-y-1/2 opacity-5" style="z-index:0;">
+    <img src="assets/logo-antaq-branca-vertical.png" alt="" style="height:400px;">
+  </div>
+</div>
+<script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
+</body>
+</html>

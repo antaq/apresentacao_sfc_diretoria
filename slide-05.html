@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Plano 2026 — Conectando Passado e Futuro</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif; }
+.slide { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; overflow:hidden; background:#ffffff; }
+.font-montserrat { font-family:'Montserrat',sans-serif; }
+.text-brand { color:#003366; }
+.bg-brand { background-color:#003366; }
+.text-accent { color:#0066CC; }
+.bg-accent { background-color:#0066CC; }
+.header-bar { height:10px; background:#003366; width:100%; }
+.secondary-bar { height:4px; background:#0066CC; width:100%; }
+
+.arrow-connector {
+  width: 60px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.arrow-connector i {
+  font-size: 32px; color: #0066CC; animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; transform: translateX(0); }
+  50% { opacity: 1; transform: translateX(4px); }
+}
+
+.past-card {
+  background: #F8FAFC; border-radius: 14px; padding: 20px 28px;
+  border: 1px solid #E2E8F0; flex: 1;
+}
+.future-card {
+  background: #F0F9FF; border-radius: 14px; padding: 20px 28px;
+  border: 1px solid #BAE6FD; flex: 1;
+}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header-bar"></div>
+  <div class="secondary-bar"></div>
+
+  <!-- Header -->
+  <div class="px-16 pt-10 pb-4">
+    <div class="flex items-center gap-3">
+      <div style="width:5px;height:44px;" class="bg-accent"></div>
+      <div>
+        <p class="font-montserrat font-bold text-gray-400 text-lg uppercase tracking-widest">Plano 2026</p>
+        <p class="text-5xl font-montserrat font-bold text-brand uppercase tracking-tight">Conectando Passado e Futuro</p>
+      </div>
+      <div class="ml-auto flex items-center gap-2">
+        <img src="assets/logo-antaq-azul.png" alt="ANTAQ" style="height:32px;">
+        <p class="font-montserrat font-bold text-gray-400 text-sm tracking-widest">SFC</p>
+      </div>
+    </div>
+    <p class="text-gray-500 text-xl mt-3 ml-2 max-w-4xl">Como as lições de 2025 moldaram as prioridades estratégicas da SFC para 2026, assegurando entregas de alto impacto alinhadas ao PEI 2025–2028 e ao PGA 2026.</p>
+  </div>
+
+  <!-- Connection Rows -->
+  <div class="flex-1 px-16 pb-6 flex flex-col gap-4 justify-center">
+    <!-- Row 1 -->
+    <div class="flex items-stretch gap-0">
+      <div class="past-card">
+        <div class="flex items-center gap-2 mb-2">
+          <i class="fas fa-history text-gray-400"></i>
+          <p class="font-montserrat font-bold text-gray-500 text-sm uppercase tracking-wider">2025 — Desafio</p>
+        </div>
+        <p class="font-montserrat font-bold text-gray-700 text-xl">Inventários dispersos e sem padronização</p>
+        <p class="text-gray-500 text-lg mt-2">Múltiplas fontes sem rastreabilidade</p>
+      </div>
+      <div class="arrow-connector"><i class="fas fa-chevron-right"></i></div>
+      <div class="future-card">
+        <div class="flex items-center gap-2 mb-2">
+          <i class="fas fa-rocket text-accent"></i>
+          <p class="font-montserrat font-bold text-accent text-sm uppercase tracking-wider">2026 — Resposta</p>
+        </div>
+        <p class="font-montserrat font-bold text-brand text-xl">SisPAT — Inventário Digital de Bens</p>
+        <p class="text-gray-600 text-lg mt-2">Plataforma com API aberta para registro, tombamento e controle dos bens da União nos portos</p>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="flex items-stretch gap-0">
+      <div class="past-card">
+        <div class="flex items-center gap-2 mb-2">
+          <i class="fas fa-history text-gray-400"></i>
+          <p class="font-montserrat font-bold text-gray-500 text-sm uppercase tracking-wider">2025 — Desafio</p>
+        </div>
+        <p class="font-montserrat font-bold text-gray-700 text-xl">Processos manuais e monitoramento limitado</p>
+        <p class="text-gray-500 text-lg mt-2">Necessidade frequente de deslocamentos físicos</p>
+      </div>
+      <div class="arrow-connector"><i class="fas fa-chevron-right"></i></div>
+      <div class="future-card">
+        <div class="flex items-center gap-2 mb-2">
+          <i class="fas fa-rocket text-accent"></i>
+          <p class="font-montserrat font-bold text-accent text-sm uppercase tracking-wider">2026 — Resposta</p>
+        </div>
+        <p class="font-montserrat font-bold text-brand text-xl">SAI + Fiscalização Eletrônica</p>
+        <p class="text-gray-600 text-lg mt-2">Cruzamento automatizado de dados para detecção de infrações e conformidade</p>
+      </div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="flex items-stretch gap-0">
+      <div class="past-card">
+        <div class="flex items-center gap-2 mb-2">
+          <i class="fas fa-history text-gray-400"></i>
+          <p class="font-montserrat font-bold text-gray-500 text-sm uppercase tracking-wider">2025 — Desafio</p>
+        </div>
+        <p class="font-montserrat font-bold text-gray-700 text-xl">Oportunidade de maior conexão sede-regionais</p>
+        <p class="text-gray-500 text-lg mt-2">Procedimentos heterogêneos</p>
+      </div>
+      <div class="arrow-connector"><i class="fas fa-chevron-right"></i></div>
+      <div class="future-card">
+        <div class="flex items-center gap-2 mb-2">
+          <i class="fas fa-rocket text-accent"></i>
+          <p class="font-montserrat font-bold text-accent text-sm uppercase tracking-wider">2026 — Resposta</p>
+        </div>
+        <p class="font-montserrat font-bold text-brand text-xl">Encontro Nacional + Dia de Fiscal</p>
+        <p class="text-gray-600 text-lg mt-2">Capacitação presencial e EAD para padronizar procedimentos</p>
+      </div>
+    </div>
+
+    <!-- Row 4 -->
+    <div class="flex items-stretch gap-0">
+      <div class="past-card">
+        <div class="flex items-center gap-2 mb-2">
+          <i class="fas fa-history text-gray-400"></i>
+          <p class="font-montserrat font-bold text-gray-500 text-sm uppercase tracking-wider">2025 — Desafio</p>
+        </div>
+        <p class="font-montserrat font-bold text-gray-700 text-xl">Estrutura funcional em evolução</p>
+        <p class="text-gray-500 text-lg mt-2">Cargos e normativos a atualizar</p>
+      </div>
+      <div class="arrow-connector"><i class="fas fa-chevron-right"></i></div>
+      <div class="future-card">
+        <div class="flex items-center gap-2 mb-2">
+          <i class="fas fa-rocket text-accent"></i>
+          <p class="font-montserrat font-bold text-accent text-sm uppercase tracking-wider">2026 — Resposta</p>
+        </div>
+        <p class="font-montserrat font-bold text-brand text-xl">Revisão Normativa + Valorização</p>
+        <p class="text-gray-600 text-lg mt-2">Valorização de cargos para Regionais e GEFs e atualização dos normativos de fiscalização</p>
+      </div>
+    </div>
+
+    <!-- Row 5 -->
+    <div class="flex items-stretch gap-0">
+      <div class="past-card">
+        <div class="flex items-center gap-2 mb-2">
+          <i class="fas fa-history text-gray-400"></i>
+          <p class="font-montserrat font-bold text-gray-500 text-sm uppercase tracking-wider">2025 — Desafio</p>
+        </div>
+        <p class="font-montserrat font-bold text-gray-700 text-xl">Denúncias da cadeia de contêineres sem monitoramento</p>
+        <p class="text-gray-500 text-lg mt-2">Necessidade de base de dados consolidada e de ferramenta para os processos de autocomposição</p>
+      </div>
+      <div class="arrow-connector"><i class="fas fa-chevron-right"></i></div>
+      <div class="future-card">
+        <div class="flex items-center gap-2 mb-2">
+          <i class="fas fa-rocket text-accent"></i>
+          <p class="font-montserrat font-bold text-accent text-sm uppercase tracking-wider">2026 — Resposta</p>
+        </div>
+        <p class="font-montserrat font-bold text-brand text-xl">ProTEU — Denúncias e Autocomposição</p>
+        <p class="text-gray-600 text-lg mt-2">Base de dados das denúncias da cadeia de contêineres e ferramenta para condução dos processos de autocomposição</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="px-16 pb-6 flex justify-between items-center border-t border-gray-100 pt-4 mx-8">
+    <p class="text-gray-400 text-sm">Apresentação à Diretoria — SFC · 2026</p>
+    <p class="text-gray-300 text-sm font-mono">5 / 14</p>
+  </div>
+</div>
+<script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
+</body>
+</html>

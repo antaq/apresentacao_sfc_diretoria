@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Recursos Necessários</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif; }
+.slide { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; overflow:hidden; background:#ffffff; }
+.font-montserrat { font-family:'Montserrat',sans-serif; }
+.text-brand { color:#003366; }
+.bg-brand { background-color:#003366; }
+.text-accent { color:#0066CC; }
+.bg-accent { background-color:#0066CC; }
+.header-bar { height:10px; background:#003366; width:100%; }
+.secondary-bar { height:4px; background:#0066CC; width:100%; }
+
+.resource-card {
+  background: #F8FAFC;
+  border-radius: 14px;
+  padding: 36px;
+  border: 1px solid #E2E8F0;
+  display: flex;
+  flex-direction: column;
+}
+.resource-icon {
+  width: 64px; height: 64px; border-radius: 16px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 30px; margin-bottom: 20px;
+}
+.need-item {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 12px 0; border-bottom: 1px solid #F1F5F9;
+}
+.need-item:last-child { border-bottom: none; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header-bar"></div>
+  <div class="secondary-bar"></div>
+
+  <!-- Header -->
+  <div class="px-16 pt-8 pb-3">
+    <div class="flex items-center gap-3">
+      <div style="width:5px;height:44px;" class="bg-accent"></div>
+      <div>
+        <p class="font-montserrat font-bold text-gray-400 text-lg uppercase tracking-widest">Plano 2026</p>
+        <p class="text-4xl font-montserrat font-bold text-brand uppercase tracking-tight">Recursos Necessários</p>
+      </div>
+      <div class="ml-auto flex items-center gap-2">
+        <img src="assets/logo-antaq-azul.png" alt="ANTAQ" style="height:32px;">
+        <p class="font-montserrat font-bold text-gray-400 text-sm tracking-widest">SFC</p>
+      </div>
+    </div>
+    <p class="text-gray-500 text-lg mt-2 ml-2">Necessidades de orçamento, pessoal e tecnologia para viabilizar as entregas de 2026.</p>
+  </div>
+
+  <!-- Three columns -->
+  <div class="flex-1 px-16 pb-4 grid grid-cols-3 gap-6">
+    <!-- Normativa -->
+    <div class="resource-card">
+      <div class="resource-icon" style="background:#EDE9FE; color:#6D28D9;">
+        <i class="fas fa-gavel"></i>
+      </div>
+      <p class="font-montserrat font-bold text-brand text-2xl mb-2">Normativa</p>
+      <p class="text-gray-500 text-base mb-4">Atualizações regulamentares necessárias para a operação eficiente da SFC.</p>
+      <div class="flex flex-col flex-1">
+        <div class="need-item">
+          <i class="fas fa-balance-scale text-purple-500 mt-1 text-sm"></i>
+          <div>
+            <p class="font-semibold text-gray-700 text-xl">Revisão das Res. 75, 13 e 3.259</p>
+            <p class="text-gray-500 text-base">Atualização das normas de navegação e fiscalização portuária.</p>
+          </div>
+        </div>
+        <div class="need-item">
+          <i class="fas fa-money-bill-wave text-purple-500 mt-1 text-sm"></i>
+          <div>
+            <p class="font-semibold text-gray-700 text-xl">Atualização dos Valores de Multa</p>
+            <p class="text-gray-500 text-base">Correção dos valores defasados — independe de AIR e audiência pública.</p>
+          </div>
+        </div>
+        <div class="need-item">
+          <i class="fas fa-ship text-purple-500 mt-1 text-sm"></i>
+          <div>
+            <p class="font-semibold text-gray-700 text-xl">Normas de Navegação Interior</p>
+            <p class="text-gray-500 text-base">Adequação normativa para travessias e linhas em regiões de fronteira.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Estrutura e Cargos -->
+    <div class="resource-card">
+      <div class="resource-icon" style="background:#FEF3C7; color:#B45309;">
+        <i class="fas fa-sitemap"></i>
+      </div>
+      <p class="font-montserrat font-bold text-brand text-2xl mb-2">Estrutura e Cargos</p>
+      <p class="text-gray-500 text-base mb-4">Reconhecimento e fortalecimento das equipes de fiscalização.</p>
+      <div class="flex flex-col flex-1">
+        <div class="need-item">
+          <i class="fas fa-award text-amber-600 mt-1 text-sm"></i>
+          <div>
+            <p class="font-semibold text-gray-700 text-xl">Valorização de Cargos</p>
+            <p class="text-gray-500 text-base">Reconhecimento funcional para líderes dos GEFs e servidores das Unidades Regionais.</p>
+          </div>
+        </div>
+        <div class="need-item">
+          <i class="fas fa-chart-pie text-amber-600 mt-1 text-sm"></i>
+          <div>
+            <p class="font-semibold text-gray-700 text-xl">Distribuição Proporcional</p>
+            <p class="text-gray-500 text-base">Reequilíbrio dos cargos comissionados com a proporção real de servidores da SFC.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tecnologia -->
+    <div class="resource-card">
+      <div class="resource-icon" style="background:#DBEAFE; color:#1E40AF;">
+        <i class="fas fa-microchip"></i>
+      </div>
+      <p class="font-montserrat font-bold text-brand text-2xl mb-2">Tecnologia</p>
+      <p class="text-gray-500 text-base mb-4">Investimentos em TI para transformar a atuação da fiscalização.</p>
+      <div class="flex flex-col flex-1">
+        <div class="need-item">
+          <i class="fas fa-database text-blue-600 mt-1 text-sm"></i>
+          <div>
+            <p class="font-semibold text-gray-700 text-xl">SisPAT — Desenvolvimento</p>
+            <p class="text-gray-500 text-base">Plataforma Oracle APEX para inventário de bens e lista de bens reversíveis nos portos organizados.</p>
+          </div>
+        </div>
+        <div class="need-item">
+          <i class="fas fa-chart-line text-blue-600 mt-1 text-sm"></i>
+          <div>
+            <p class="font-semibold text-gray-700 text-xl">SAI — Desenvolvimento</p>
+            <p class="text-gray-500 text-base">Sistema para acompanhamento dos investimentos em portos e TUPs.</p>
+          </div>
+        </div>
+        <div class="need-item">
+          <i class="fas fa-file-invoice-dollar text-blue-600 mt-1 text-sm"></i>
+          <div>
+            <p class="font-semibold text-gray-700 text-xl">ProTEU — Evolução Contínua</p>
+            <p class="text-gray-500 text-base">Base de denúncias da cadeia de contêineres e ferramenta de autocomposição; Fase 6 (pós-denúncia) depende da liberação da fila de e-mail pela TI.</p>
+          </div>
+        </div>
+        <div class="need-item">
+          <i class="fas fa-desktop text-blue-600 mt-1 text-sm"></i>
+          <div>
+            <p class="font-semibold text-gray-700 text-xl">Fiscalização Eletrônica</p>
+            <p class="text-gray-500 text-base">Monitoramento automatizado por cruzamento de dados e detecção de infrações em tempo real.</p>
+          </div>
+        </div>
+        <div class="need-item">
+          <i class="fas fa-ship text-blue-600 mt-1 text-sm"></i>
+          <div>
+            <p class="font-semibold text-gray-700 text-xl">Lineup ANTAQ</p>
+            <p class="text-gray-500 text-base">Monitoramento de lineups de navios em terminais de contêineres com detecção de omissões de escala e evidências.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="px-16 pb-5 flex justify-between items-center border-t border-gray-100 pt-3 mx-8">
+    <p class="text-gray-400 text-sm">Apresentação à Diretoria — SFC · 2026</p>
+    <p class="text-gray-300 text-sm font-mono">9 / 14</p>
+  </div>
+</div>
+<script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
+</body>
+</html>

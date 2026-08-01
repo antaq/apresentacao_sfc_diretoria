@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Encerramento — SFC 2026</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif; }
+.slide { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; overflow:hidden;
+  background: linear-gradient(135deg, #001a33 0%, #003366 40%, #004d99 100%); }
+.font-montserrat { font-family:'Montserrat',sans-serif; }
+.gold { color: #FFD700; }
+
+.closing-card {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  padding: 24px 32px;
+  display: flex; align-items: center; gap: 20px;
+}
+.closing-icon {
+  width: 56px; height: 56px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px; flex-shrink: 0;
+  background: rgba(255,215,0,0.15); color: #FFD700;
+}
+</style>
+</head>
+<body>
+<div class="slide">
+  <!-- Decorative circles -->
+  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" style="width:600px; height:600px; border-radius:50%; border:1px solid rgba(255,215,0,0.06);"></div>
+  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" style="width:450px; height:450px; border-radius:50%; border:1px solid rgba(255,215,0,0.04);"></div>
+
+  <!-- Gold top accent -->
+  <div style="height:6px; background: linear-gradient(90deg, #FFD700, #FFA500); width:100%;"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 flex flex-col items-center justify-center flex-1 px-16">
+    <!-- Trophy icon -->
+    <div class="w-20 h-20 rounded-full flex items-center justify-center mb-6" style="background: linear-gradient(135deg, #FFD700, #FFA500); box-shadow: 0 0 50px rgba(255,215,0,0.2);">
+      <i class="fas fa-handshake text-white text-3xl"></i>
+    </div>
+
+    <!-- Title -->
+    <p class="font-montserrat font-black text-white text-5xl text-center mb-2">Obrigado!</p>
+    <div style="width:80px; height:4px; background:#FFD700; margin: 16px auto 24px;"></div>
+    <p class="text-2xl text-gray-300 font-light text-center leading-relaxed max-w-2xl mb-8">
+      Superintendência de Fiscalização e<br/>
+      Coordenação das Unidades Regionais — <strong class="text-white">SFC</strong>
+    </p>
+
+    <!-- Summary pills -->
+    <div class="flex gap-4 mb-10">
+      <div class="closing-card">
+        <div class="closing-icon"><i class="fas fa-clipboard-check"></i></div>
+        <div>
+          <p class="text-white font-montserrat font-bold text-xl">7 Fiscalizações</p>
+          <p class="text-gray-400 text-base">Temáticas em execução</p>
+        </div>
+      </div>
+      <div class="closing-card">
+        <div class="closing-icon"><i class="fas fa-users-cog"></i></div>
+        <div>
+          <p class="text-white font-montserrat font-bold text-xl">2 GEFs Ativos</p>
+          <p class="text-gray-400 text-base">Investimentos e Contêineres</p>
+        </div>
+      </div>
+      <div class="closing-card">
+        <div class="closing-icon"><i class="fas fa-server"></i></div>
+        <div>
+          <p class="text-white font-montserrat font-bold text-xl">4 Sistemas</p>
+          <p class="text-gray-400 text-base">SisPAT, SAI, ProTEU e Fisc. Eletrônica</p>
+        </div>
+      </div>
+      <div class="closing-card">
+        <div class="closing-icon"><i class="fas fa-people-group"></i></div>
+        <div>
+          <p class="text-white font-montserrat font-bold text-xl">110+ Capacitados</p>
+          <p class="text-gray-400 text-base">Encontro Nacional + Dia de Fiscal</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quote -->
+    <div class="max-w-3xl text-center">
+      <p class="text-gray-400 text-xl italic leading-relaxed">"Promover o desenvolvimento sustentável do setor de transportes aquaviários, beneficiando a sociedade por meio de regulação eficiente, fiscalização responsiva, outorgas estratégicas e estudos inovadores."</p>
+      <p class="gold text-sm font-montserrat font-bold uppercase tracking-widest mt-3">Missão ANTAQ — PEI 2025–2028</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="relative z-10 px-16 pb-8 flex justify-between items-center border-t border-gray-700 pt-6 mx-8">
+    <div class="flex items-center gap-6 text-gray-500 text-xs">
+      <span><i class="fas fa-globe mr-1"></i> www.gov.br/antaq</span>
+      <span><i class="fab fa-linkedin mr-1"></i> linkedin.com/company/antaq</span>
+      <span><i class="fab fa-instagram mr-1"></i> @antaq_oficial</span>
+    </div>
+    <p class="text-gray-500 text-sm font-montserrat font-bold tracking-wider">PPF 2025–2028 | Projetos SFC 2026</p>
+  </div>
+
+  <!-- Watermark -->
+  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" style="z-index:0; opacity:0.03;">
+    <img src="assets/logo-antaq-branca-vertical.png" alt="" style="height:55vh;">
+  </div>
+</div>
+<script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
+</body>
+</html>

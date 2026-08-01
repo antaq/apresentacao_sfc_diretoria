@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Entregas Recentes — SFC</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif; }
+.slide { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; overflow:hidden; background:#ffffff; }
+.font-montserrat { font-family:'Montserrat',sans-serif; }
+.text-brand { color:#003366; }
+.bg-brand { background-color:#003366; }
+.text-accent { color:#0066CC; }
+.bg-accent { background-color:#0066CC; }
+.header-bar { height:10px; background:#003366; width:100%; }
+.secondary-bar { height:4px; background:#0066CC; width:100%; }
+
+.stat-card {
+  background: linear-gradient(135deg, #003366, #004d99);
+  border-radius: 16px;
+  padding: 24px 20px;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::after {
+  content: '';
+  position: absolute; top: -30px; right: -30px;
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+}
+.stat-num {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 56px;
+  line-height: 1;
+}
+.delivery-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 20px;
+  background: #F8FAFC;
+  border-radius: 14px;
+  border-left: 5px solid #0066CC;
+}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header-bar"></div>
+  <div class="secondary-bar"></div>
+
+  <!-- Header -->
+  <div class="px-16 pt-8 pb-3">
+    <div class="flex items-center gap-3">
+      <div style="width:5px;height:44px;" class="bg-accent"></div>
+      <div>
+        <p class="font-montserrat font-bold text-gray-400 text-lg uppercase tracking-widest">Entregas Recentes · 2025 — 1º Sem. 2026</p>
+        <p class="text-5xl font-montserrat font-bold text-brand uppercase tracking-tight">Principais Entregas</p>
+      </div>
+      <div class="ml-auto flex items-center gap-2">
+        <img src="assets/logo-antaq-azul.png" alt="ANTAQ" style="height:32px;">
+        <p class="font-montserrat font-bold text-gray-400 text-sm tracking-widest">SFC</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats Row -->
+  <div class="px-16 pb-3 grid grid-cols-4 gap-4">
+    <div class="stat-card">
+      <p class="stat-num">1.184</p>
+      <p class="text-blue-200 text-base font-semibold mt-2">Ações Fiscalizatórias<br/>Realizadas</p>
+    </div>
+    <div class="stat-card">
+      <p class="stat-num">96%</p>
+      <p class="text-blue-200 text-base font-semibold mt-2">Execução do PAF<br/>(Indicador EPAF)</p>
+    </div>
+    <div class="stat-card">
+      <p class="stat-num">176</p>
+      <p class="text-blue-200 text-base font-semibold mt-2">Acordos de Conciliação<br/>(Contêineres)</p>
+    </div>
+    <div class="stat-card">
+      <p class="stat-num" style="font-size:44px;">R$23mi</p>
+      <p class="text-blue-200 text-base font-semibold mt-2">Economia Gerada<br/>aos Usuários</p>
+    </div>
+  </div>
+
+  <!-- Deliveries Grid -->
+  <div class="flex-1 px-16 pb-3 grid grid-cols-2 gap-3 auto-rows-fr">
+    <div style="grid-column: span 2; display:flex; align-items:flex-start; gap:20px; padding:18px 28px; background: linear-gradient(135deg, #F0FDF4, #DCFCE7); border-radius:14px; border-left:6px solid #22C55E;">
+      <div class="w-12 h-12 rounded-lg bg-green-500 flex items-center justify-center flex-shrink-0">
+        <i class="fas fa-trophy text-white text-xl"></i>
+      </div>
+      <div class="flex-1">
+        <p class="font-montserrat font-bold text-brand text-xl">PAF 2025 — EPAF 96% (apenas 24 ações canceladas)</p>
+        <p class="text-gray-600 text-base mt-1"><strong>674 fiscalizações extraordinárias</strong> (57%) e <strong>510 programadas</strong> (43%), além de <strong>537 fiscalizações de rotina</strong>. Destaque para o atendimento de <strong>963 demandas de Ouvidoria</strong> encaminhadas à fiscalização — controle social altamente ativo mesmo com redução de 36% na força de trabalho na última década.</p>
+      </div>
+    </div>
+    <div class="delivery-item">
+      <div class="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0">
+        <i class="fas fa-handshake text-green-600"></i>
+      </div>
+      <div>
+        <p class="font-montserrat font-bold text-brand text-lg">GEF Contêineres — Conciliação</p>
+        <p class="text-gray-600 text-sm mt-1">Em 2025: <strong>240 audiências</strong> sobre sobreestadia com <strong>73,3% de resolutividade</strong> e mais de <strong>500 denúncias</strong> tratadas, subsidiando o Acórdão nº 521/2025.</p>
+        <p class="text-sm mt-1 font-semibold" style="color:#92400E;"><i class="fas fa-clock mr-1"></i>1º sem./2026: dados em consolidação — a inserir.</p>
+      </div>
+    </div>
+    <div class="delivery-item">
+      <div class="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0">
+        <i class="fas fa-search-dollar text-green-600"></i>
+      </div>
+      <div>
+        <p class="font-montserrat font-bold text-brand text-lg">GEF Investimentos</p>
+        <p class="text-gray-600 text-sm mt-1">Criado em 2024 para padronizar a verificação de obrigações contratuais. Em 2025, acompanhou <strong>73 processos</strong> no 1º semestre e <strong>103 no 2º</strong>, com controle rigoroso sobre a execução dos investimentos em terminais.</p>
+        <p class="text-sm mt-1 font-semibold" style="color:#92400E;"><i class="fas fa-clock mr-1"></i>1º sem./2026: dados em consolidação — a inserir.</p>
+      </div>
+    </div>
+    <div class="delivery-item">
+      <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0">
+        <i class="fas fa-tasks text-accent"></i>
+      </div>
+      <div>
+        <p class="font-montserrat font-bold text-brand text-lg">Fiscalizações Temáticas em Andamento</p>
+        <p class="text-gray-600 text-sm mt-1">As 7 temáticas de 2026 seguem em execução — <strong>nenhuma concluída ainda</strong>. Previsão de conclusões e consolidações dos relatórios no <strong>2º semestre de 2026</strong>.</p>
+      </div>
+    </div>
+    <div class="delivery-item">
+      <div class="w-12 h-12 rounded-lg bg-orange-100 flex items-center justify-center flex-shrink-0">
+        <i class="fas fa-gavel text-orange-600"></i>
+      </div>
+      <div>
+        <p class="font-montserrat font-bold text-brand text-lg">Medidas Corretivas e Sancionatórias</p>
+        <p class="text-gray-600 text-sm mt-1"><strong>271 autos de infração</strong> lavrados, <strong>129 NOCIs</strong> emitidas e <strong>9 TACs</strong> celebrados — priorizando a regularização do serviço sobre a arrecadação de multas.</p>
+      </div>
+    </div>
+    <div class="delivery-item">
+      <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0">
+        <i class="fas fa-cogs text-accent"></i>
+      </div>
+      <div>
+        <p class="font-montserrat font-bold text-brand text-lg">Metodologias e Sistemas</p>
+        <p class="text-gray-600 text-sm mt-1">Metodologia de Contratos de Arrendamento, Manual de Fiscalização Conjunta da APS, concepção do <strong>SisPAT</strong>, levantamento de requisitos do <strong>SAI</strong> e implantação do <strong>ProTEU</strong> — novo sistema de registro e acompanhamento de denúncias de cobranças na cadeia de contêineres, com condução do procedimento sumário de autocomposição.</p>
+      </div>
+    </div>
+    <div class="delivery-item">
+      <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0">
+        <i class="fas fa-users text-accent"></i>
+      </div>
+      <div>
+        <p class="font-montserrat font-bold text-brand text-lg">Articulação Interinstitucional</p>
+        <p class="text-gray-600 text-sm mt-1">Atuação no <strong>Festival de Parintins</strong> e operações conjuntas na <strong>COP 30 em Belém</strong> com Receita Federal, Marinha e Polícia Federal.</p>
+      </div>
+    </div>
+    <div class="delivery-item" style="grid-column: span 2;">
+      <div class="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0">
+        <i class="fas fa-anchor text-green-600"></i>
+      </div>
+      <div>
+        <p class="font-montserrat font-bold text-brand text-lg">Fiscalização das Condições dos Acessos Aquaviários dos Portos Organizados</p>
+        <p class="text-gray-600 text-sm mt-1">Fiscalização anual dos parâmetros operacionais de calado e dragagem nos acessos aquaviários de todos os Portos Organizados, com relatório consolidado à Diretoria Colegiada.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="px-16 pb-6 flex justify-between items-center border-t border-gray-100 pt-4 mx-8">
+    <p class="text-gray-400 text-sm">Apresentação à Diretoria — SFC · 2026</p>
+    <p class="text-gray-300 text-sm font-mono">3 / 14</p>
+  </div>
+</div>
+<script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
+</body>
+</html>

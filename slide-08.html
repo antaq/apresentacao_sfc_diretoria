@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cronograma Macro 2026</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif; }
+.slide { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; overflow:hidden; background:#ffffff; }
+.font-montserrat { font-family:'Montserrat',sans-serif; }
+.text-brand { color:#003366; }
+.bg-brand { background-color:#003366; }
+.text-accent { color:#0066CC; }
+.bg-accent { background-color:#0066CC; }
+.header-bar { height:10px; background:#003366; width:100%; }
+.secondary-bar { height:4px; background:#0066CC; width:100%; }
+
+.timeline-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 17px;
+}
+.timeline-table th {
+  background: #003366;
+  color: white;
+  padding: 14px 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.timeline-table th:first-child {
+  border-radius: 10px 0 0 0;
+  text-align: left;
+  padding-left: 16px;
+  min-width: 260px;
+}
+.timeline-table th:last-child {
+  border-radius: 0 10px 0 0;
+}
+.timeline-table td {
+  padding: 10px 6px;
+  border-bottom: 1px solid #F1F5F9;
+  vertical-align: middle;
+}
+.timeline-table td:first-child {
+  padding-left: 16px;
+  font-weight: 600;
+  color: #1E293B;
+}
+.timeline-table tr:last-child td {
+  border-bottom: none;
+}
+.timeline-table tbody tr:hover {
+  background: #F8FAFC;
+}
+.bar {
+  height: 30px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.03em;
+}
+.bar-blue { background: linear-gradient(90deg, #0066CC, #0088ee); }
+.bar-green { background: linear-gradient(90deg, #16A34A, #22C55E); }
+.bar-purple { background: linear-gradient(90deg, #7C3AED, #A855F7); }
+.bar-orange { background: linear-gradient(90deg, #EA580C, #F97316); }
+.bar-teal { background: linear-gradient(90deg, #0D9488, #14B8A6); }
+.bar-indigo { background: linear-gradient(90deg, #4338CA, #6366F1); }
+.section-label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  color: #003366;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 12px 16px 6px 16px;
+  background: #F0F9FF;
+}
+.q-marker {
+  position: relative;
+}
+.q-label {
+  position: absolute; top: -20px; left: 50%; transform: translateX(-50%);
+  font-size: 9px; color: #94A3B8; font-weight: 600;
+}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header-bar"></div>
+  <div class="secondary-bar"></div>
+
+  <!-- Header -->
+  <div class="px-16 pt-8 pb-3">
+    <div class="flex items-center gap-3">
+      <div style="width:5px;height:44px;" class="bg-accent"></div>
+      <div>
+        <p class="font-montserrat font-bold text-gray-400 text-lg uppercase tracking-widest">Plano 2026</p>
+        <p class="text-4xl font-montserrat font-bold text-brand uppercase tracking-tight">Cronograma Macro <span class="text-gray-400 text-2xl font-semibold normal-case">· status em jul/2026</span></p>
+      </div>
+      <div class="ml-auto flex items-center gap-2">
+        <img src="assets/logo-antaq-azul.png" alt="ANTAQ" style="height:32px;">
+        <p class="font-montserrat font-bold text-gray-400 text-sm tracking-widest">SFC</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Timeline Table -->
+  <div class="flex-1 px-16 pb-4 overflow-hidden">
+    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
+      <table class="timeline-table">
+        <thead>
+          <tr>
+            <th>Atividade / Projeto</th>
+            <th>Jan</th><th>Fev</th><th>Mar</th><th>Abr</th><th>Mai</th><th>Jun</th>
+            <th>Jul</th><th>Ago</th><th>Set</th><th>Out</th><th>Nov</th><th>Dez</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Section: Fiscalizações -->
+          <tr><td colspan="13" class="section-label"><i class="fas fa-clipboard-check mr-2"></i>Fiscalizações & Projetos</td></tr>
+          <tr>
+            <td>Fisc. Temáticas (V, VI, VII)</td>
+            <td colspan="3"><div class="bar bar-blue">Elaboração</div></td>
+            <td colspan="5"><div class="bar bar-blue">Execução</div></td>
+            <td colspan="2"><div class="bar bar-green">Consolidação</div></td>
+            <td colspan="2"></td>
+          </tr>
+          <tr>
+            <td>GEF Investimentos</td>
+            <td colspan="12"><div class="bar bar-indigo">Acompanhamento contínuo ao longo do ano</div></td>
+          </tr>
+          <tr>
+            <td>GEF Contêineres</td>
+            <td colspan="12"><div class="bar bar-indigo">Acompanhamento contínuo ao longo do ano</div></td>
+          </tr>
+          <tr>
+            <td>Metodologias e Manuais</td>
+            <td colspan="10"><div class="bar bar-purple">Desenvolvimento e revisão (até outubro)</div></td>
+            <td colspan="1"><div class="bar bar-purple">Validação</div></td>
+            <td colspan="1"><div class="bar bar-green">Implantação</div></td>
+          </tr>
+
+          <!-- Section: Capacitação -->
+          <tr><td colspan="13" class="section-label"><i class="fas fa-graduation-cap mr-2"></i>Capacitação</td></tr>
+          <tr>
+            <td>Encontro Nacional (ENAFIS)</td>
+            <td colspan="3"><div class="bar bar-orange">Aprovação</div></td>
+            <td colspan="2"><div class="bar bar-orange">Logística</div></td>
+            <td colspan="1"><div class="bar bar-green" style="font-weight:900;">✓ Realizado 15–19/06</div></td>
+            <td colspan="6"></td>
+          </tr>
+          <tr>
+            <td>Dia de Fiscal</td>
+            <td colspan="3"><div class="bar bar-orange">Aprovação</div></td>
+            <td colspan="3"><div class="bar bar-orange">Programação</div></td>
+            <td colspan="1"></td>
+            <td colspan="2"><div class="bar bar-green">Capacitação + Visitas (19–20/08)</div></td>
+            <td colspan="3"></td>
+          </tr>
+
+          <!-- Section: Sistemas -->
+          <tr><td colspan="13" class="section-label"><i class="fas fa-server mr-2"></i>Sistemas de TI</td></tr>
+          <tr>
+            <td>SisPAT — Inventário de Bens</td>
+            <td colspan="4"><div class="bar bar-teal">Pilotos & Divulgação</div></td>
+            <td colspan="3"><div class="bar bar-teal">Submissão — prazo 31/07</div></td>
+            <td colspan="3"><div class="bar bar-green">Fiscalização Inventários</div></td>
+            <td colspan="2"><div class="bar bar-teal">Planejamento Fase 2</div></td>
+          </tr>
+          <tr>
+            <td>SAI — Investimentos</td>
+            <td colspan="6"><div class="bar bar-teal">Desenvolvimento F1</div></td>
+            <td colspan="3"><div class="bar bar-green">Piloto & Lançamento</div></td>
+            <td colspan="3"></td>
+          </tr>
+          <tr>
+            <td>SFIS Novo — Controle Fiscal</td>
+            <td colspan="3"><div class="bar bar-teal">Base & Migração</div></td>
+            <td colspan="5"><div class="bar bar-teal">Módulos APEX</div></td>
+            <td colspan="2"><div class="bar bar-teal">Testes & UAT</div></td>
+            <td colspan="1"><div class="bar bar-green">Go-Live</div></td>
+            <td colspan="1"></td>
+          </tr>
+          <tr>
+            <td>Fiscalização Eletrônica (3 Níveis)</td>
+            <td colspan="6"><div class="bar bar-teal">Mapeamento de normas</div></td>
+            <td colspan="4"><div class="bar bar-teal">Desenvolvimento do sistema</div></td>
+            <td colspan="2"><div class="bar bar-green">Implantação (3 obrigações)</div></td>
+          </tr>
+          <tr>
+            <td>ProTEU — Denúncias e Autocomposição</td>
+            <td colspan="7"><div class="bar bar-green">Fases 1–5 — Formulário e gestão do fiscal ✓</div></td>
+            <td colspan="3"><div class="bar bar-teal">Fase 6 — Pós-denúncia</div></td>
+            <td colspan="2"><div class="bar bar-teal">Consolidação</div></td>
+          </tr>
+
+          <!-- Section: Estrutura -->
+          <tr><td colspan="13" class="section-label"><i class="fas fa-building mr-2"></i>Necessidades Estruturais</td></tr>
+          <tr>
+            <td>Revisão Normativa e Cargos</td>
+            <td colspan="6"><div class="bar bar-purple">Análise e propostas</div></td>
+            <td colspan="6"><div class="bar bar-purple">Tramitação e aprovação</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="px-16 pb-5 flex justify-between items-center border-t border-gray-100 pt-3 mx-8">
+    <p class="text-gray-400 text-sm">Apresentação à Diretoria — SFC · 2026</p>
+    <a href="https://projetos-sfc-2026-production.up.railway.app/" target="_blank" rel="noopener"
+       style="display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,#003366,#0066CC); color:white; padding:10px 24px; border-radius:10px; font-family:'Montserrat',sans-serif; font-weight:700; font-size:14px; text-decoration:none; letter-spacing:0.03em; transition:all 0.2s; box-shadow:0 4px 12px rgba(0,51,102,0.3);"
+       onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 20px rgba(0,51,102,0.4)'"
+       onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 12px rgba(0,51,102,0.3)'">
+      <i class="fas fa-external-link-alt"></i> Ver Cronograma Interativo
+    </a>
+    <p class="text-gray-300 text-sm font-mono">8 / 14</p>
+  </div>
+</div>
+<script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
+</body>
+</html>

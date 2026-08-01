@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Agenda — SFC · Diretoria</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif; }
+.slide { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; overflow:hidden; background:#ffffff; }
+.font-montserrat { font-family:'Montserrat',sans-serif; }
+.text-brand { color:#003366; }
+.bg-brand { background-color:#003366; }
+.text-accent { color:#0066CC; }
+.bg-accent { background-color:#0066CC; }
+.header-bar { height:10px; background:#003366; width:100%; }
+.secondary-bar { height:4px; background:#0066CC; width:100%; }
+
+.agenda-card {
+  background: #F8FAFC;
+  border-radius: 16px;
+  padding: 36px;
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  border: 1px solid #E2E8F0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.agenda-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px -8px rgba(0,51,102,0.15);
+}
+.agenda-num {
+  width:68px; height:68px; border-radius:14px;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Montserrat',sans-serif; font-weight:900; font-size:28px;
+  color:white; flex-shrink:0;
+}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header-bar"></div>
+  <div class="secondary-bar"></div>
+
+  <!-- Header -->
+  <div class="px-16 pt-12 pb-6">
+    <div class="flex items-center gap-3">
+      <div style="width:5px; height:44px;" class="bg-accent"></div>
+      <div>
+        <p class="text-5xl font-montserrat font-bold text-brand uppercase tracking-tight">Agenda da Apresentação</p>
+        <p class="text-gray-500 font-medium text-2xl mt-1">Entregas Recentes, Andamento e Prioridades — SFC 2026</p>
+      </div>
+      <div class="ml-auto flex items-center gap-2">
+        <img src="assets/logo-antaq-azul.png" alt="ANTAQ" style="height:32px;">
+        <p class="font-montserrat font-bold text-gray-400 text-sm tracking-widest">ANTAQ</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cards Grid -->
+  <div class="flex-1 px-16 pb-8 grid grid-cols-2 gap-5">
+    <!-- Card 1 -->
+    <div class="agenda-card">
+      <div class="agenda-num" style="background: linear-gradient(135deg, #003366, #0055a5);">01</div>
+      <div>
+        <p class="font-montserrat font-bold text-brand text-3xl mb-3">Entregas Recentes</p>
+        <p class="text-gray-600 text-xl leading-relaxed">Resultados de 2025 e andamento dos trabalhos da SFC no 1º semestre de 2026.</p>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="bg-blue-50 text-accent text-base font-semibold px-4 py-2 rounded">Entregas</span>
+          <span class="bg-blue-50 text-accent text-base font-semibold px-4 py-2 rounded">Desafios</span>
+          <span class="bg-blue-50 text-accent text-base font-semibold px-4 py-2 rounded">Lições</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="agenda-card">
+      <div class="agenda-num" style="background: linear-gradient(135deg, #0055a5, #0077cc);">02</div>
+      <div>
+        <p class="font-montserrat font-bold text-brand text-3xl mb-3">Plano 2026 — Entregas Prioritárias</p>
+        <p class="text-gray-600 text-xl leading-relaxed">Fiscalizações temáticas, GEFs, capacitação e sistemas de TI em execução no 2º semestre.</p>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="bg-blue-50 text-accent text-base font-semibold px-4 py-2 rounded">Fiscalizações</span>
+          <span class="bg-blue-50 text-accent text-base font-semibold px-4 py-2 rounded">Capacitação</span>
+          <span class="bg-blue-50 text-accent text-base font-semibold px-4 py-2 rounded">Sistemas</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="agenda-card">
+      <div class="agenda-num" style="background: linear-gradient(135deg, #0077cc, #0099e6);">03</div>
+      <div>
+        <p class="font-montserrat font-bold text-brand text-3xl mb-3">Cronograma e Recursos</p>
+        <p class="text-gray-600 text-xl leading-relaxed">Linha do tempo macro das atividades e recursos necessários para execução do plano.</p>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="bg-blue-50 text-accent text-base font-semibold px-4 py-2 rounded">Cronograma</span>
+          <span class="bg-blue-50 text-accent text-base font-semibold px-4 py-2 rounded">Orçamento</span>
+          <span class="bg-blue-50 text-accent text-base font-semibold px-4 py-2 rounded">Pessoal</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="agenda-card">
+      <div class="agenda-num" style="background: linear-gradient(135deg, #0099e6, #00aaff);">04</div>
+      <div>
+        <p class="font-montserrat font-bold text-brand text-3xl mb-3">Entrega de Ouro, Riscos e Navegação Interior</p>
+        <p class="text-gray-600 text-xl leading-relaxed">Prioridade máxima, gestão de riscos, sinergias e o desafio das fronteiras remotas.</p>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="bg-yellow-50 text-yellow-700 text-base font-semibold px-4 py-2 rounded">Entrega de Ouro</span>
+          <span class="bg-blue-50 text-accent text-base font-semibold px-4 py-2 rounded">Sinergias</span>
+          <span class="bg-red-50 text-red-600 text-base font-semibold px-4 py-2 rounded">Riscos</span>
+          <span class="bg-green-50 text-green-700 text-base font-semibold px-4 py-2 rounded">Navegacao Interior</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="px-16 pb-8 flex justify-between items-center border-t border-gray-100 pt-4 mx-8">
+    <p class="text-gray-400 text-sm">Apresentação à Diretoria — SFC · 2026</p>
+    <p class="text-gray-300 text-sm font-mono">2 / 14</p>
+  </div>
+</div>
+<script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
+</body>
+</html>

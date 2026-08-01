@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projetos SFC — Apresentação à Diretoria ANTAQ</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0; width: 100%; height: 100%;
+      background: radial-gradient(circle at top, #1a2744 0%, #0c1929 55%);
+      color: #e5e7eb;
+      font-family: 'Montserrat', 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+    .app {
+      width: 100vw; height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 18px; padding-bottom: 80px;
+    }
+    .stage {
+      width: min(96vw, calc(96vh * 16 / 9));
+      aspect-ratio: 16 / 9;
+      background: #000; border-radius: 10px;
+      border: 1px solid #2a3a55;
+      box-shadow: 0 16px 44px rgba(0,0,0,0.5);
+      overflow: hidden; position: relative;
+    }
+    iframe {
+      width: 1920px; height: 1080px;
+      border: 0; background: #fff; display: block;
+      position: absolute; top: 0; left: 0;
+      transform-origin: top left;
+    }
+    .nav-bar {
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+      display: flex; align-items: center; gap: 8px;
+      background: rgba(0,51,102,0.95); backdrop-filter: blur(12px);
+      padding: 8px 16px; border-radius: 50px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      z-index: 1000;
+    }
+    .nav-bar button {
+      background: none; border: none; color: white; cursor: pointer;
+      width: 38px; height: 38px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; transition: background 0.2s;
+    }
+    .nav-bar button:hover { background: rgba(255,255,255,0.2); }
+    .nav-bar button:disabled { opacity: 0.3; cursor: default; }
+    .nav-bar button:disabled:hover { background: none; }
+    .nav-bar .page-info {
+      color: white; font-size: 13px; font-weight: 500;
+      min-width: 80px; text-align: center;
+    }
+    .nav-dots {
+      display: flex; gap: 4px; align-items: center; margin: 0 8px;
+    }
+    .nav-dots button {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(255,255,255,0.3); border: none;
+      cursor: pointer; padding: 0; transition: all 0.2s;
+    }
+    .nav-dots button.active {
+      background: #FFD700; width: 24px; border-radius: 4px;
+    }
+    .nav-dots button:hover:not(.active) { background: rgba(255,255,255,0.6); }
+    .fs-btn {
+      position: fixed; top: 16px; right: 16px;
+      background: rgba(0,51,102,0.8); backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: white; cursor: pointer;
+      width: 40px; height: 40px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; z-index: 1000; transition: all 0.2s;
+    }
+    .fs-btn:hover { background: rgba(0,51,102,1); }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="stage">
+      <iframe id="slideFrame" title="Slide"></iframe>
+    </div>
+  </div>
+
+  <div class="nav-bar">
+    <button onclick="prev()" id="btnPrev" title="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+    <div class="nav-dots" id="navDots"></div>
+    <button onclick="next()" id="btnNext" title="Próximo"><i class="fa-solid fa-chevron-right"></i></button>
+    <span class="page-info" id="pageInfo">1 / 14</span>
+  </div>
+
+  <button class="fs-btn" onclick="toggleFullscreen()" title="Tela Cheia (F)"><i class="fa-solid fa-expand" id="fsIcon"></i></button>
+
+  <script>
+    const total = 14;
+    const frame = document.getElementById('slideFrame');
+    let current = 1;
+
+    const cacheBust = `v=${Date.now()}`;
+    function fileFor(n) { return `slide-${String(n).padStart(2,'0')}.html?${cacheBust}`; }
+
+    function render() {
+      frame.src = fileFor(current);
+      document.getElementById('pageInfo').textContent = `${current} / ${total}`;
+      document.getElementById('btnPrev').disabled = current === 1;
+      document.getElementById('btnNext').disabled = current === total;
+      updateDots();
+    }
+
+    function next() { if (current < total) { current++; render(); } }
+    function prev() { if (current > 1) { current--; render(); } }
+
+    function updateDots() {
+      document.querySelectorAll('.nav-dots button').forEach((dot, i) => {
+        dot.classList.toggle('active', i === current - 1);
+      });
+    }
+
+    const dotsContainer = document.getElementById('navDots');
+    for (let i = 0; i < total; i++) {
+      const dot = document.createElement('button');
+      dot.addEventListener('click', () => { current = i + 1; render(); });
+      dot.title = `Slide ${i + 1}`;
+      dotsContainer.appendChild(dot);
+    }
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        document.exitFullscreen().catch(() => {});
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); next(); }
+      else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); prev(); }
+      else if (e.key === 'Home') { e.preventDefault(); current = 1; render(); }
+      else if (e.key === 'End') { e.preventDefault(); current = total; render(); }
+      else if (e.key === 'f' || e.key === 'F') { toggleFullscreen(); }
+    });
+
+    window.addEventListener('message', (e) => {
+      if (e.data && e.data.type === 'slide-nav') {
+        const key = e.data.key;
+        if (key === 'ArrowRight' || key === ' ' || key === 'PageDown') next();
+        else if (key === 'ArrowLeft' || key === 'PageUp') prev();
+        else if (key === 'Home') { current = 1; render(); }
+        else if (key === 'End') { current = total; render(); }
+        else if (key === 'f' || key === 'F') toggleFullscreen();
+      }
+    });
+
+    render();
+
+    const stage = document.querySelector('.stage');
+    function scaleFrame() {
+      const scale = Math.min(stage.clientWidth / 1920, stage.clientHeight / 1080);
+      frame.style.transform = `scale(${scale})`;
+    }
+    scaleFrame();
+    window.addEventListener('resize', scaleFrame);
+    new ResizeObserver(scaleFrame).observe(stage);
+  </script>
+</body>
+</html>
