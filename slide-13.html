@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Desafio — Navegação Interior</title>
+<title>Riscos e Ações de Mitigação</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
@@ -11,258 +11,182 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
 <style>
 body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif; }
-.slide { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; overflow:hidden;
-  background: linear-gradient(135deg, #0c2a1a 0%, #1a3a2a 40%, #0d4a3a 100%); }
+.slide { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; overflow:hidden; background:#ffffff; }
 .font-montserrat { font-family:'Montserrat',sans-serif; }
+.text-brand { color:#003366; }
+.bg-brand { background-color:#003366; }
+.text-accent { color:#0066CC; }
+.bg-accent { background-color:#0066CC; }
+.header-bar { height:10px; background:#003366; width:100%; }
+.secondary-bar { height:4px; background:#0066CC; width:100%; }
 
-.location-card {
-  background: rgba(255,255,255,0.06);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 16px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+.risk-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 20px 1fr;
+  gap: 14px;
+  align-items: stretch;
+  margin-bottom: 20px;
 }
-.card-slider {
-  flex: 1;
-  position: relative;
-  overflow: hidden;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  cursor: pointer;
+.risk-num {
+  width: 60px; height: 60px; border-radius: 16px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 26px;
+  color: white; align-self: center;
 }
-.card-slider img,
-.card-slider video {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.8s ease;
+.risk-box {
+  background: #FEF2F2;
+  border-radius: 14px;
+  padding: 22px 28px;
+  border-left: 6px solid #EF4444;
 }
-.card-slider img.active,
-.card-slider video.active {
-  opacity: 1;
+.mitigation-box {
+  background: #F0FDF4;
+  border-radius: 14px;
+  padding: 22px 28px;
+  border-left: 6px solid #22C55E;
 }
-.slider-dots {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 6px;
-  z-index: 5;
+.arrow-col {
+  display: flex; align-items: center; justify-content: center;
+  color: #94A3B8; font-size: 18px;
 }
-.slider-dots span {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.4);
-  transition: background 0.3s;
-  cursor: pointer;
+.severity-tag {
+  font-size: 14px; font-weight: 800; padding: 4px 12px;
+  border-radius: 10px; text-transform: uppercase; letter-spacing: 0.05em;
 }
-.slider-dots span.active {
-  background: rgba(255,255,255,0.95);
-}
-.location-card .card-body {
-  padding: 20px 28px;
-  display: flex;
-  flex-direction: column;
-}
-.location-badge {
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 5px 14px; border-radius: 20px; font-size: 13px;
-  font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
-}
-.challenge-pill {
-  display: inline-flex; align-items: center; gap: 6px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 10px;
-  padding: 6px 14px;
-  font-size: 14px;
-  color: #94A3B8;
-  font-weight: 600;
-}
+.sev-high { background: #FEE2E2; color: #991B1B; }
+.sev-med { background: #FEF3C7; color: #92400E; }
 </style>
 </head>
 <body>
 <div class="slide">
-  <!-- Decorative elements -->
-  <div class="absolute top-0 left-0 w-96 h-96 rounded-full opacity-5" style="background: radial-gradient(circle, #22C55E 0%, transparent 70%); transform: translate(-30%, -30%);"></div>
-  <div class="absolute bottom-0 right-0 w-80 h-80 rounded-full opacity-5" style="background: radial-gradient(circle, #0EA5E9 0%, transparent 70%); transform: translate(30%, 30%);"></div>
-
-  <!-- Green top accent -->
-  <div style="height:6px; background: linear-gradient(90deg, #22C55E, #0EA5E9); width:100%;"></div>
+  <div class="header-bar"></div>
+  <div class="secondary-bar"></div>
 
   <!-- Header -->
-  <div class="px-16 pt-10 pb-4 relative z-10">
+  <div class="px-16 pt-8 pb-3">
     <div class="flex items-center gap-3">
-      <div style="width:5px;height:50px; background:#22C55E;"></div>
+      <div style="width:5px;height:44px;" class="bg-accent"></div>
       <div>
-        <p class="font-montserrat font-bold text-green-400 text-xl uppercase tracking-widest">Desafio Estratégico</p>
-        <p class="text-5xl font-montserrat font-black text-white uppercase tracking-tight">Navegação Interior</p>
+        <p class="font-montserrat font-bold text-gray-400 text-lg uppercase tracking-widest">Gestão de Riscos</p>
+        <p class="text-5xl font-montserrat font-bold text-brand uppercase tracking-tight">Riscos e Ações de Mitigação</p>
       </div>
-      <div class="ml-auto flex items-center gap-3">
-        <img src="assets/logo-antaq-branca.png" alt="ANTAQ" style="height:36px;">
+      <div class="ml-auto flex items-center gap-2">
+        <img src="assets/logo-antaq-azul.png" alt="ANTAQ" style="height:32px;">
+        <p class="font-montserrat font-bold text-gray-400 text-sm tracking-widest">SFC</p>
       </div>
     </div>
-    <p class="text-gray-400 text-xl mt-3 ml-2 max-w-4xl">Fiscalização nas fronteiras mais remotas do Brasil — onde o transporte aquaviário é o <strong class="text-white">único meio de acesso</strong> para milhares de cidadãos.</p>
   </div>
 
-  <!-- Three location cards -->
-  <div class="flex-1 px-16 pb-6 relative z-10 flex gap-8" style="min-height:0;">
-
-    <!-- Oiapoque -->
-    <div class="location-card">
-      <div class="card-slider" data-slider="oiapoque">
-        <video src="assets/oiapoque/oiapoque-01.webm" class="active" muted playsinline></video>
-        <video src="assets/oiapoque/oiapoque-02.webm" muted playsinline></video>
-        <video src="assets/oiapoque/oiapoque-03.webm" muted playsinline></video>
-        <video src="assets/oiapoque/oiapoque-04.webm" muted playsinline></video>
-        <video src="assets/oiapoque/oiapoque-05.webm" muted playsinline></video>
-        <video src="assets/oiapoque/oiapoque-06.webm" muted playsinline></video>
-        <img src="assets/oiapoque/oiapoque-07.jpeg" alt="Oiapoque">
-        <img src="assets/oiapoque/oiapoque-08.jpeg" alt="Oiapoque">
-        <img src="assets/oiapoque/oiapoque-09.jpeg" alt="Oiapoque">
-        <img src="assets/oiapoque/oiapoque-10.jpeg" alt="Oiapoque">
-        <img src="assets/oiapoque/oiapoque-11.jpeg" alt="Oiapoque">
-        <img src="assets/oiapoque/oiapoque-12.jpeg" alt="Oiapoque">
-        <div class="absolute top-4 left-4 z-10">
-          <span class="location-badge" style="background:rgba(34,197,94,0.2); color:#4ADE80;"><i class="fas fa-map-marker-alt"></i> AP</span>
-        </div>
-        <div class="slider-dots"></div>
+  <!-- Column Headers -->
+  <div class="px-16 pb-3">
+    <div style="display:grid; grid-template-columns: 60px 1fr 20px 1fr; gap:14px;">
+      <div></div>
+      <div class="flex items-center gap-3" style="padding-left:28px;">
+        <i class="fas fa-exclamation-triangle text-red-400 text-xl"></i>
+        <p class="font-montserrat font-bold text-red-600 text-xl uppercase tracking-wider">Risco Identificado</p>
       </div>
-      <div class="card-body">
-        <p class="font-montserrat font-black text-white text-2xl mb-1">Oiapoque</p>
-        <p class="text-green-300 font-montserrat font-semibold text-base mb-2">Fronteira com a Guiana Francesa</p>
-        <p class="text-gray-400 text-base leading-relaxed mb-3">Travessia fluvial internacional pelo Rio Oiapoque — única conexão entre Brasil e Guiana Francesa por via aquaviária.</p>
-        <div class="flex flex-wrap gap-2 mt-auto">
-          <span class="challenge-pill"><i class="fas fa-water text-green-400"></i> Rio Oiapoque</span>
-          <span class="challenge-pill"><i class="fas fa-passport text-blue-400"></i> Fronteira internacional</span>
+      <div></div>
+      <div class="flex items-center gap-3" style="padding-left:28px;">
+        <i class="fas fa-shield-alt text-green-500 text-xl"></i>
+        <p class="font-montserrat font-bold text-green-600 text-xl uppercase tracking-wider">Ação de Mitigação</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Risk Rows -->
+  <div class="flex-1 px-16 pb-4 flex flex-col justify-center">
+    <!-- Risk 1 -->
+    <div class="risk-row">
+      <div class="risk-num" style="background: linear-gradient(135deg, #DC2626, #EF4444);">1</div>
+      <div class="risk-box">
+        <div class="flex items-center gap-2 mb-1">
+          <p class="font-bold text-gray-800 text-lg">Atraso no desenvolvimento dos sistemas de TI</p>
+          <span class="severity-tag sev-high">Alto</span>
         </div>
+        <p class="text-gray-600 text-lg">Necessidade de alinhamento com a SGE/TI e possíveis restrições de equipe técnica podem impactar o cronograma do SisPAT e SAI.</p>
+      </div>
+      <div class="arrow-col"><i class="fas fa-chevron-right"></i></div>
+      <div class="mitigation-box">
+        <p class="font-bold text-gray-800 text-xl mb-1">Acompanhamento Semanal e Entregas Parciais</p>
+        <p class="text-gray-600 text-lg">Reuniões semanais de alinhamento com TI, entregas em etapas com versões funcionais intermediárias e priorização das funcionalidades críticas.</p>
       </div>
     </div>
 
-    <!-- Guajará-Mirim -->
-    <div class="location-card">
-      <div class="card-slider" data-slider="guajara">
-        <img src="assets/guajara-mirim/guajara-mirim-01.jpeg" class="active" alt="Guajará-Mirim">
-        <img src="assets/guajara-mirim/guajara-mirim-02.jpeg" alt="Guajará-Mirim">
-        <img src="assets/guajara-mirim/guajara-mirim-03.jpeg" alt="Guajará-Mirim">
-        <img src="assets/guajara-mirim/guajara-mirim-04.jpeg" alt="Guajará-Mirim">
-        <img src="assets/guajara-mirim/guajara-mirim-05.jpeg" alt="Guajará-Mirim">
-        <img src="assets/guajara-mirim/guajara-mirim-06.jpeg" alt="Guajará-Mirim">
-        <img src="assets/guajara-mirim/guajara-mirim-07.jpeg" alt="Guajará-Mirim">
-        <img src="assets/guajara-mirim/guajara-mirim-08.jpeg" alt="Guajará-Mirim">
-        <img src="assets/guajara-mirim/guajara-mirim-09.jpeg" alt="Guajará-Mirim">
-        <img src="assets/guajara-mirim/guajara-mirim-10.jpeg" alt="Guajará-Mirim">
-        <img src="assets/guajara-mirim/guajara-mirim-11.jpeg" alt="Guajará-Mirim">
-        <img src="assets/guajara-mirim/guajara-mirim-12.jpeg" alt="Guajará-Mirim">
-        <img src="assets/guajara-mirim/guajara-mirim-13.jpeg" alt="Guajará-Mirim">
-        <img src="assets/guajara-mirim/guajara-mirim-14.jpeg" alt="Guajará-Mirim">
-        <img src="assets/guajara-mirim/guajara-mirim-15.jpeg" alt="Guajará-Mirim">
-        <img src="assets/guajara-mirim/guajara-mirim-16.jpeg" alt="Guajará-Mirim">
-        <img src="assets/guajara-mirim/guajara-mirim-17.jpeg" alt="Guajará-Mirim">
-        <div class="absolute top-4 left-4 z-10">
-          <span class="location-badge" style="background:rgba(14,165,233,0.2); color:#38BDF8;"><i class="fas fa-map-marker-alt"></i> RO</span>
+    <!-- Risk 2 -->
+    <div class="risk-row">
+      <div class="risk-num" style="background: linear-gradient(135deg, #DC2626, #EF4444);">2</div>
+      <div class="risk-box">
+        <div class="flex items-center gap-2 mb-1">
+          <p class="font-bold text-gray-800 text-lg">Restrições orçamentárias</p>
+          <span class="severity-tag sev-high">Alto</span>
         </div>
-        <div class="slider-dots"></div>
+        <p class="text-gray-600 text-lg">Contingenciamento de recursos pode inviabilizar entregas estratégicas, fiscalizações em áreas remotas, o Encontro Nacional, aquisição de equipamentos e contratações.</p>
       </div>
-      <div class="card-body">
-        <p class="font-montserrat font-black text-white text-2xl mb-1">Guajará-Mirim</p>
-        <p class="text-blue-300 font-montserrat font-semibold text-base mb-2">Fronteira com a Bolívia</p>
-        <p class="text-gray-400 text-base leading-relaxed mb-3">Travessia pelo Rio Mamoré conectando Brasil e Bolívia — rota essencial para comércio e deslocamento de comunidades ribeirinhas.</p>
-        <div class="flex flex-wrap gap-2 mt-auto">
-          <span class="challenge-pill"><i class="fas fa-water text-blue-400"></i> Rio Mamoré</span>
-          <span class="challenge-pill"><i class="fas fa-passport text-green-400"></i> Fronteira internacional</span>
-        </div>
+      <div class="arrow-col"><i class="fas fa-chevron-right"></i></div>
+      <div class="mitigation-box">
+        <p class="font-bold text-gray-800 text-xl mb-1">Priorização e Fontes Alternativas</p>
+        <p class="text-gray-600 text-lg">Mapeamento antecipado com SAF, identificação de parcerias institucionais e priorização baseada em impacto.</p>
       </div>
     </div>
 
-    <!-- Tabatinga -->
-    <div class="location-card">
-      <div class="card-slider" data-slider="tabatinga">
-        <img src="assets/tabatinga/tabatinga-01.jpeg" class="active" alt="Tabatinga">
-        <img src="assets/tabatinga/tabatinga-02.jpeg" alt="Tabatinga">
-        <img src="assets/tabatinga/tabatinga-03.jpeg" alt="Tabatinga">
-        <img src="assets/tabatinga/tabatinga-04.jpeg" alt="Tabatinga">
-        <div class="absolute top-4 left-4 z-10">
-          <span class="location-badge" style="background:rgba(251,191,36,0.2); color:#FCD34D;"><i class="fas fa-map-marker-alt"></i> AM</span>
+    <!-- Risk 3 -->
+    <div class="risk-row">
+      <div class="risk-num" style="background: linear-gradient(135deg, #F59E0B, #FBBF24);">3</div>
+      <div class="risk-box">
+        <div class="flex items-center gap-2 mb-1">
+          <p class="font-bold text-gray-800 text-lg">Prazo de regulamentação do novo marco normativo</p>
+          <span class="severity-tag sev-med">Médio</span>
         </div>
-        <div class="slider-dots"></div>
+        <p class="text-gray-600 text-lg">Com a Res. 135/2026 em vigor a partir de 14/10, a SFC tem 90 dias (art. 99) para editar os atos complementares — solução consensual, notificação para correção e dosimetria. A Res. 138/2026 exige adequação até 15/02/2027 e a valorização de cargos segue em instâncias externas.</p>
       </div>
-      <div class="card-body">
-        <p class="font-montserrat font-black text-white text-2xl mb-1">Tabatinga</p>
-        <p class="text-yellow-300 font-montserrat font-semibold text-base mb-2">Tríplice fronteira — Colômbia e Peru</p>
-        <p class="text-gray-400 text-base leading-relaxed mb-3">Navegação no Rio Solimões na tríplice fronteira — ponto estratégico para passageiros e cargas na Amazônia Ocidental.</p>
-        <div class="flex flex-wrap gap-2 mt-auto">
-          <span class="challenge-pill"><i class="fas fa-water text-yellow-400"></i> Rio Solimões</span>
-          <span class="challenge-pill"><i class="fas fa-passport text-yellow-400"></i> Tríplice fronteira</span>
-        </div>
+      <div class="arrow-col"><i class="fas fa-chevron-right"></i></div>
+      <div class="mitigation-box">
+        <p class="font-bold text-gray-800 text-xl mb-1">Cronograma de Regulamentação</p>
+        <p class="text-gray-600 text-lg">Elaboração dos atos já em curso, com articulação com PFA, SRG e Diretoria. O ProTEU antecipa o mecanismo de solução consensual previsto no art. 6º da Res. 135/2026.</p>
       </div>
     </div>
 
+    <!-- Risk 4 -->
+    <div class="risk-row">
+      <div class="risk-num" style="background: linear-gradient(135deg, #F59E0B, #FBBF24);">4</div>
+      <div class="risk-box">
+        <div class="flex items-center gap-2 mb-1">
+          <p class="font-bold text-gray-800 text-lg">Consistência e completude dos inventários do SisPAT</p>
+          <span class="severity-tag sev-med">Médio</span>
+        </div>
+        <p class="text-gray-600 text-lg">Com 75% da base de obrigadas já coberta, o risco migra da adesão para a qualidade do dado: inventários incompletos, bens sem valoração adequada e reguladas ainda pendentes de entrega.</p>
+      </div>
+      <div class="arrow-col"><i class="fas fa-chevron-right"></i></div>
+      <div class="mitigation-box">
+        <p class="font-bold text-gray-800 text-xl mb-1">Fiscalização de Consistência</p>
+        <p class="text-gray-600 text-lg">Auditoria dos inventários entregues, notificação das reguladas pendentes, treinamentos e help desk dedicado.</p>
+      </div>
+    </div>
+
+    <!-- Risk 5 -->
+    <div class="risk-row">
+      <div class="risk-num" style="background: linear-gradient(135deg, #F59E0B, #FBBF24);">5</div>
+      <div class="risk-box">
+        <div class="flex items-center gap-2 mb-1">
+          <p class="font-bold text-gray-800 text-lg">Fiscalização em fronteiras remotas</p>
+          <span class="severity-tag sev-med">Médio</span>
+        </div>
+        <p class="text-gray-600 text-lg">Oiapoque, Guajará-Mirim e Tabatinga exigem deslocamentos longos e caros, com infraestrutura precária.</p>
+      </div>
+      <div class="arrow-col"><i class="fas fa-chevron-right"></i></div>
+      <div class="mitigation-box">
+        <p class="font-bold text-gray-800 text-xl mb-1">Fiscalização Eletrônica + GEFs</p>
+        <p class="text-gray-600 text-lg">Monitoramento por cruzamento de dados, capacitação de fiscais regionais e GEF Passageiros dedicado.</p>
+      </div>
+    </div>
   </div>
 
   <!-- Footer -->
-  <div class="relative z-10 px-16 pb-6 flex justify-between items-center border-t border-gray-700 pt-4 mx-8">
-    <p class="text-gray-500 text-sm">Apresentação à Diretoria — SFC · 2026</p>
-    <p class="text-gray-500 text-sm font-mono">13 / 14</p>
+  <div class="px-16 pb-5 flex justify-between items-center border-t border-gray-100 pt-3 mx-8">
+    <p class="text-gray-400 text-sm">Apresentação à Diretoria — SFC · 2026</p>
+    <p class="text-gray-300 text-sm font-mono">13 / 15</p>
   </div>
 </div>
-
-<script>
-document.querySelectorAll('.card-slider').forEach(slider => {
-  const items = slider.querySelectorAll('img, video');
-  const hasVideo = slider.querySelectorAll('video').length > 0;
-  function intervalFor(idx) { return items[idx].tagName === 'VIDEO' ? 10000 : 4000; }
-  const dotsContainer = slider.querySelector('.slider-dots');
-  let current = 0;
-  let timer;
-
-  // Create dots
-  items.forEach((_, i) => {
-    const dot = document.createElement('span');
-    if (i === 0) dot.classList.add('active');
-    dot.addEventListener('click', e => { e.stopPropagation(); goTo(i); });
-    dotsContainer.appendChild(dot);
-  });
-  const dots = dotsContainer.querySelectorAll('span');
-
-  function goTo(idx) {
-    const prev = items[current];
-    prev.classList.remove('active');
-    if (prev.tagName === 'VIDEO') { prev.pause(); prev.currentTime = 0; }
-    dots[current].classList.remove('active');
-    current = idx;
-    const curr = items[current];
-    curr.classList.add('active');
-    if (curr.tagName === 'VIDEO') { curr.currentTime = 0; curr.play(); }
-    dots[current].classList.add('active');
-    resetTimer();
-  }
-
-  function next() {
-    goTo((current + 1) % items.length);
-  }
-
-  function resetTimer() {
-    clearTimeout(timer);
-    timer = setTimeout(next, intervalFor(current));
-  }
-
-  // Start first video if applicable
-  if (hasVideo && items[0].tagName === 'VIDEO') items[0].play();
-
-  // Click on slider advances to next
-  slider.addEventListener('click', () => next());
-
-  // Stagger start so cards don't all transition at once
-  const delay = Math.random() * 2000;
-  setTimeout(() => { timer = setTimeout(next, intervalFor(current)); }, delay);
-});
-</script>
 <script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
 </body>
 </html>
