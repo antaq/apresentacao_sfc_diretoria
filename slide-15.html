@@ -27,7 +27,7 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
 .closing-icon {
   width: 56px; height: 56px; border-radius: 14px;
   display: flex; align-items: center; justify-content: center;
-  font-size: 26px; flex-shrink: 0;
+  font-size: calc(26px * var(--tz)); flex-shrink: 0;
   background: rgba(255,215,0,0.15); color: #FFD700;
 }
 </style>
@@ -110,6 +110,7 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
     <img src="assets/logo-antaq-branca-vertical.png" alt="" style="height:55vh;">
   </div>
 </div>
+<script src="zoom.js"></script>
 <script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
 </body>
 </html>

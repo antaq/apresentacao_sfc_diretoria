@@ -30,7 +30,7 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
 .risk-num {
   width: 60px; height: 60px; border-radius: 16px;
   display: flex; align-items: center; justify-content: center;
-  font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 26px;
+  font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: calc(26px * var(--tz));
   color: white; align-self: center;
 }
 .risk-box {
@@ -47,10 +47,10 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
 }
 .arrow-col {
   display: flex; align-items: center; justify-content: center;
-  color: #94A3B8; font-size: 18px;
+  color: #94A3B8; font-size: calc(18px * var(--tz));
 }
 .severity-tag {
-  font-size: 14px; font-weight: 800; padding: 4px 12px;
+  font-size: calc(14px * var(--tz)); font-weight: 800; padding: 4px 12px;
   border-radius: 10px; text-transform: uppercase; letter-spacing: 0.05em;
 }
 .sev-high { background: #FEE2E2; color: #991B1B; }
@@ -187,6 +187,7 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
     <p class="text-gray-300 text-sm font-mono">13 / 15</p>
   </div>
 </div>
+<script src="zoom.js"></script>
 <script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
 </body>
 </html>

@@ -24,7 +24,7 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
   width: 60px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
 }
 .arrow-connector i {
-  font-size: 32px; color: #0066CC; animation: pulse 2s infinite;
+  font-size: calc(32px * var(--tz)); color: #0066CC; animation: pulse 2s infinite;
 }
 @keyframes pulse {
   0%, 100% { opacity: 0.4; transform: translateX(0); }
@@ -176,6 +176,7 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
     <p class="text-gray-300 text-sm font-mono">5 / 15</p>
   </div>
 </div>
+<script src="zoom.js"></script>
 <script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
 </body>
 </html>

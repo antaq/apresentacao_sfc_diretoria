@@ -35,7 +35,7 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
   box-shadow: 0 8px 20px -6px rgba(0,51,102,0.12);
 }
 .area-badge {
-  padding: 6px 16px; border-radius: 20px; font-size: 15px;
+  padding: 6px 16px; border-radius: 20px; font-size: calc(15px * var(--tz));
   font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
   white-space: nowrap;
 }
@@ -189,6 +189,7 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
     <p class="text-gray-300 text-sm font-mono">12 / 15</p>
   </div>
 </div>
+<script src="zoom.js"></script>
 <script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
 </body>
 </html>

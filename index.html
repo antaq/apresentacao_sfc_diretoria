@@ -57,6 +57,17 @@
       color: white; font-size: 13px; font-weight: 500;
       min-width: 80px; text-align: center;
     }
+    .nav-bar .home-btn { font-size: 12px; }
+    .nav-bar .nav-divider {
+      width: 1px; height: 22px;
+      background: rgba(255,255,255,0.25);
+      margin: 0 4px;
+    }
+    .nav-bar .zoom-label {
+      width: auto; min-width: 46px; padding: 0 6px;
+      border-radius: 10px;
+      font-size: 12px; font-weight: 600;
+    }
     .nav-dots {
       display: flex; gap: 4px; align-items: center; margin: 0 8px;
     }
@@ -89,10 +100,15 @@
   </div>
 
   <div class="nav-bar">
+    <button onclick="goHome()" class="home-btn" title="Ir para o slide inicial (Home)"><i class="fa-solid fa-house"></i></button>
     <button onclick="prev()" id="btnPrev" title="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
     <div class="nav-dots" id="navDots"></div>
     <button onclick="next()" id="btnNext" title="Próximo"><i class="fa-solid fa-chevron-right"></i></button>
     <span class="page-info" id="pageInfo">1 / 15</span>
+    <span class="nav-divider"></span>
+    <button onclick="zoomOut()" title="Diminuir texto (-)"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
+    <button onclick="zoomReset()" class="zoom-label" id="zoomLabel" title="Restaurar tamanho do texto (0)">100%</button>
+    <button onclick="zoomIn()" title="Aumentar texto (+)"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
   </div>
 
   <button class="fs-btn" onclick="toggleFullscreen()" title="Tela Cheia (F)"><i class="fa-solid fa-expand" id="fsIcon"></i></button>
@@ -115,6 +131,7 @@
 
     function next() { if (current < total) { current++; render(); } }
     function prev() { if (current > 1) { current--; render(); } }
+    function goHome() { current = 1; render(); }
 
     function updateDots() {
       document.querySelectorAll('.nav-dots button').forEach((dot, i) => {
@@ -130,6 +147,14 @@
       dotsContainer.appendChild(dot);
     }
 
+    // Zoom de texto: os slides aplicam (zoom.js); o visualizador só envia comandos
+    function sendZoom(action) {
+      if (frame.contentWindow) frame.contentWindow.postMessage({ type: 'slide-zoom', action }, '*');
+    }
+    function zoomIn() { sendZoom('in'); }
+    function zoomOut() { sendZoom('out'); }
+    function zoomReset() { sendZoom('reset'); }
+
     function toggleFullscreen() {
       if (!document.fullscreenElement) {
         document.documentElement.requestFullscreen().catch(() => {});
@@ -139,11 +164,15 @@
     }
 
     document.addEventListener('keydown', (e) => {
+      if (e.ctrlKey || e.metaKey || e.altKey) return; // preserva o zoom nativo do navegador
       if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); next(); }
       else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); prev(); }
-      else if (e.key === 'Home') { e.preventDefault(); current = 1; render(); }
+      else if (e.key === 'Home') { e.preventDefault(); goHome(); }
       else if (e.key === 'End') { e.preventDefault(); current = total; render(); }
       else if (e.key === 'f' || e.key === 'F') { toggleFullscreen(); }
+      else if (e.key === '+' || e.key === '=') { e.preventDefault(); zoomIn(); }
+      else if (e.key === '-' || e.key === '_') { e.preventDefault(); zoomOut(); }
+      else if (e.key === '0') { e.preventDefault(); zoomReset(); }
     });
 
     window.addEventListener('message', (e) => {
@@ -151,9 +180,11 @@
         const key = e.data.key;
         if (key === 'ArrowRight' || key === ' ' || key === 'PageDown') next();
         else if (key === 'ArrowLeft' || key === 'PageUp') prev();
-        else if (key === 'Home') { current = 1; render(); }
+        else if (key === 'Home') goHome();
         else if (key === 'End') { current = total; render(); }
         else if (key === 'f' || key === 'F') toggleFullscreen();
+      } else if (e.data && e.data.type === 'slide-zoom-changed') {
+        document.getElementById('zoomLabel').textContent = Math.round(e.data.value * 100) + '%';
       }
     });
 

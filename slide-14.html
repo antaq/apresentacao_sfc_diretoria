@@ -71,7 +71,7 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
 }
 .location-badge {
   display: inline-flex; align-items: center; gap: 6px;
-  padding: 5px 14px; border-radius: 20px; font-size: 13px;
+  padding: 5px 14px; border-radius: 20px; font-size: calc(13px * var(--tz));
   font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
 }
 .challenge-pill {
@@ -80,7 +80,7 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: 10px;
   padding: 6px 14px;
-  font-size: 14px;
+  font-size: calc(14px * var(--tz));
   color: #94A3B8;
   font-weight: 600;
 }
@@ -263,6 +263,7 @@ document.querySelectorAll('.card-slider').forEach(slider => {
   setTimeout(() => { timer = setTimeout(next, intervalFor(current)); }, delay);
 });
 </script>
+<script src="zoom.js"></script>
 <script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
 </body>
 </html>

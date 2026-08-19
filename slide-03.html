@@ -39,7 +39,7 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
 .stat-num {
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
-  font-size: 56px;
+  font-size: calc(56px * var(--tz));
   line-height: 1;
 }
 .delivery-item {
@@ -88,7 +88,7 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
       <p class="text-blue-200 text-base font-semibold mt-2">Acordos de Conciliação<br/>(Contêineres)</p>
     </div>
     <div class="stat-card">
-      <p class="stat-num" style="font-size:44px;">R$23mi</p>
+      <p class="stat-num" style="font-size:calc(44px * var(--tz));">R$23mi</p>
       <p class="text-blue-200 text-base font-semibold mt-2">Economia Gerada<br/>aos Usuários</p>
     </div>
   </div>
@@ -177,6 +177,7 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
     <p class="text-gray-300 text-sm font-mono">3 / 15</p>
   </div>
 </div>
+<script src="zoom.js"></script>
 <script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
 </body>
 </html>

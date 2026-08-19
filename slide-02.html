@@ -39,7 +39,7 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
 .agenda-num {
   width:68px; height:68px; border-radius:14px;
   display:flex; align-items:center; justify-content:center;
-  font-family:'Montserrat',sans-serif; font-weight:900; font-size:28px;
+  font-family:'Montserrat',sans-serif; font-weight:900; font-size:calc(28px * var(--tz));
   color:white; flex-shrink:0;
 }
 </style>
@@ -130,6 +130,7 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
     <p class="text-gray-300 text-sm font-mono">2 / 15</p>
   </div>
 </div>
+<script src="zoom.js"></script>
 <script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
 </body>
 </html>

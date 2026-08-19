@@ -49,8 +49,8 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
 
     <!-- Main title -->
     <div class="mt-4">
-      <p class="font-montserrat font-black text-white leading-none" style="font-size:72px;">Projetos</p>
-      <p class="font-montserrat font-black gold leading-none mt-2" style="font-size:88px;">SFC 2026</p>
+      <p class="font-montserrat font-black text-white leading-none" style="font-size:calc(72px * var(--tz));">Projetos</p>
+      <p class="font-montserrat font-black gold leading-none mt-2" style="font-size:calc(88px * var(--tz));">SFC 2026</p>
       <div class="bg-gold mt-6 mb-8" style="width:100px; height:4px;"></div>
       <p class="text-2xl text-gray-300 font-light leading-relaxed max-w-2xl">
         Superintendência de Fiscalização e<br/>
@@ -111,6 +111,7 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
     <img src="assets/logo-antaq-branca-vertical.png" alt="" style="height:400px;">
   </div>
 </div>
+<script src="zoom.js"></script>
 <script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
 </body>
 </html>
