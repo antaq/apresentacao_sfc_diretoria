@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Entregas Prioritárias — Fiscalizações & Projetos</title>
+<title>Entregas Prioritárias — Capacitação & Sistemas</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
@@ -20,25 +20,24 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
 .header-bar { height:10px; background:#003366; width:100%; }
 .secondary-bar { height:4px; background:#0066CC; width:100%; }
 
-.section-block {
+.feature-card {
   background: #F8FAFC;
   border-radius: 14px;
-  padding: 32px;
+  padding: 30px;
   border: 1px solid #E2E8F0;
+  display: flex;
+  flex-direction: column;
 }
-.tematica-row {
-  display: flex; align-items: center; gap: 14px;
-  padding: 12px 16px; border-radius: 10px;
-  background: white; border: 1px solid #F1F5F9;
+.feature-icon {
+  width: 56px; height: 56px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: calc(26px * var(--tz)); margin-bottom: 16px;
 }
-.status-tag {
-  font-size: calc(14px * var(--tz)); font-weight: 700; padding: 5px 14px;
-  border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em;
-  white-space: nowrap;
+.info-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: white; border: 1px solid #E2E8F0; border-radius: 20px;
+  padding: 6px 14px; font-size: calc(14px * var(--tz)); color: #475569; font-weight: 600;
 }
-.status-done { background: #DCFCE7; color: #166534; }
-.status-progress { background: #DBEAFE; color: #1E40AF; }
-.status-draft { background: #FEF3C7; color: #92400E; }
 </style>
 </head>
 <body>
@@ -52,7 +51,7 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
       <div style="width:5px;height:44px;" class="bg-accent"></div>
       <div>
         <p class="font-montserrat font-bold text-gray-400 text-base uppercase tracking-widest">Plano 2026 — Entregas Prioritárias</p>
-        <p class="text-4xl font-montserrat font-bold text-brand uppercase tracking-tight">Fiscalizações & Projetos</p>
+        <p class="text-4xl font-montserrat font-bold text-brand uppercase tracking-tight">Capacitação & Sistemas de TI</p>
       </div>
       <div class="ml-auto flex items-center gap-2">
         <img src="assets/logo-antaq-azul.png" alt="ANTAQ" style="height:32px;">
@@ -61,150 +60,106 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
     </div>
   </div>
 
-  <!-- Content: 3 sections -->
-  <div class="flex-1 px-16 pb-4 grid grid-cols-3 gap-6">
-    <!-- Fiscalizações Temáticas -->
-    <div class="section-block flex flex-col">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center">
-          <i class="fas fa-clipboard-check text-accent text-lg"></i>
-        </div>
-        <p class="font-montserrat font-bold text-brand text-xl uppercase">Fiscalizações Temáticas</p>
+  <!-- Content -->
+  <div class="flex-1 px-16 pb-4">
+    <!-- Row 1: Capacitação -->
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+        <i class="fas fa-graduation-cap text-green-600 text-sm"></i>
       </div>
-      <p class="text-gray-500 text-base mb-3 leading-relaxed">Aprofundar o entendimento fiscal sobre pontos críticos do setor regulado.</p>
-      <div class="flex items-start gap-2 mb-3 px-3 py-2 rounded-lg" style="background:#FFFBEB; border:1px solid #FDE68A;">
-        <i class="fas fa-crosshairs text-amber-600 mt-1" style="font-size:calc(13px * var(--tz));"></i>
-        <p class="text-amber-800 leading-snug" style="font-size:calc(14px * var(--tz));"><strong>Escopo delimitado:</strong> cada temática trabalha com um <strong>rol limitado de fiscalizadas</strong> (amostragem direcionada).</p>
+      <p class="font-montserrat font-bold text-brand text-2xl uppercase tracking-wide">Capacitação</p>
+    </div>
+    <div class="grid grid-cols-2 gap-5 mb-6">
+      <!-- Encontro Nacional -->
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#DCFCE7; color:#166534;">
+          <i class="fas fa-people-group"></i>
+        </div>
+        <p class="font-montserrat font-bold text-brand text-2xl mb-3">Encontro Nacional de Fiscalização (Enafis)</p>
+        <p class="text-gray-600 text-lg leading-relaxed mb-4">Módulo único teórico e prático presencial para padronizar procedimentos e integrar equipes das Unidades Regionais.</p>
+        <div class="flex flex-wrap gap-2 mt-auto">
+          <span class="info-pill"><i class="fas fa-users text-accent"></i> 80 participantes</span>
+          <span class="info-pill"><i class="fas fa-map-pin text-accent"></i> Paranaguá (PR)</span>
+          <span class="info-pill"><i class="fas fa-calendar text-accent"></i> 21–25/09/2026</span>
+          <span class="info-pill"><i class="fas fa-ship text-accent"></i> Visita técnica</span>
+        </div>
       </div>
-      <div class="flex flex-col gap-2 flex-1">
-        <div class="tematica-row">
-          <span class="text-base text-gray-700 flex-1 font-semibold">I. Diagnóstico do Desempenho das Autoridades Portuárias</span>
-          <span class="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-semibold whitespace-nowrap">Amostra: 5 APs</span>
+
+      <!-- Dia de Fiscal -->
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#FEF3C7; color:#92400E;">
+          <i class="fas fa-chalkboard-teacher"></i>
         </div>
-        <div class="tematica-row">
-          <span class="text-base text-gray-700 flex-1 font-semibold">II. Estrutura de Fiscalização das Autoridades Portuárias</span>
-          <span class="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-semibold whitespace-nowrap">Amostragem</span>
-        </div>
-        <div class="tematica-row">
-          <span class="text-base text-gray-700 flex-1 font-semibold">III. Diagnóstico dos Convênios de Delegação</span>
-          <span class="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-semibold whitespace-nowrap">Amostragem</span>
-        </div>
-        <div class="tematica-row">
-          <span class="text-base text-gray-700 flex-1 font-semibold">IV. Preço em Terminais de Contêineres</span>
-          <span class="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-semibold whitespace-nowrap">Amostragem</span>
-        </div>
-        <div class="tematica-row">
-          <span class="text-base text-gray-700 flex-1 font-semibold">V. Verificação da Utilização da TPB para Inscrição no REB</span>
-        </div>
-        <div class="tematica-row">
-          <span class="text-base text-gray-700 flex-1 font-semibold">VI. Embarcações do Transporte Misto</span>
-        </div>
-        <div class="tematica-row">
-          <span class="text-base text-gray-700 flex-1 font-semibold">VII. Atraso e Omissão de Navios de Contêineres</span>
+        <p class="font-montserrat font-bold text-brand text-2xl mb-3">Dia de Fiscal</p>
+        <p class="text-gray-600 text-lg leading-relaxed mb-4">Curso EAD síncrono (4h) para servidores da Sede e UREs sobre conceitos de fiscalização, legislação e execução fiscalizatória.</p>
+        <div class="flex flex-wrap gap-2 mt-auto">
+          <span class="info-pill"><i class="fas fa-user-plus text-accent"></i> 30 novos servidores</span>
+          <span class="info-pill"><i class="fas fa-video text-accent"></i> EAD síncrono — 4h</span>
+          <span class="info-pill"><i class="fas fa-eye text-accent"></i> Visão sistêmica ANTAQ</span>
         </div>
       </div>
     </div>
 
-    <!-- GEFs -->
-    <div class="section-block flex flex-col">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-lg bg-indigo-100 flex items-center justify-center">
-          <i class="fas fa-users-cog text-indigo-600 text-lg"></i>
-        </div>
-        <p class="font-montserrat font-bold text-brand text-xl uppercase">Grupos Especializados — GEF</p>
+    <!-- Row 2: Sistemas -->
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+        <i class="fas fa-server text-accent text-sm"></i>
       </div>
-      <p class="text-gray-500 text-base mb-5 leading-relaxed">Equipes temáticas para execução mais precisa com conhecimento aprofundado.</p>
-
-      <!-- GEF Investimentos -->
-      <div class="bg-white rounded-lg p-4 border border-blue-100 mb-3">
-        <div class="flex items-center gap-2 mb-2">
-          <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center">
-            <i class="fas fa-chart-line text-white text-xs"></i>
-          </div>
-          <p class="font-montserrat font-bold text-brand text-lg">GEF Investimentos</p>
-        </div>
-        <p class="text-gray-600 text-base leading-relaxed mb-2">Acompanhamento dos compromissos de investimento previstos nos contratos de arrendamento e concessão.</p>
-        <div class="flex flex-wrap gap-1">
-          <span class="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded">Cronogramas</span>
-          <span class="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded">Dados financeiros</span>
-          <span class="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded">Conformidade</span>
-        </div>
-      </div>
-
-      <!-- GEF Contêineres -->
-      <div class="bg-white rounded-lg p-4 border border-blue-100">
-        <div class="flex items-center gap-2 mb-2">
-          <div class="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center">
-            <i class="fas fa-ship text-white text-xs"></i>
-          </div>
-          <p class="font-montserrat font-bold text-brand text-lg">GEF Contêineres</p>
-        </div>
-        <p class="text-gray-600 text-base leading-relaxed mb-2">Realizar as apurações fiscalizatórias afetas às reclamações que envolvam cadeia logística de contêineres, conduzindo o rito de autocomposição da Portaria SFC nº 1/2026.</p>
-        <div class="flex flex-wrap gap-1">
-          <span class="text-xs bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded">Sobrestadia</span>
-          <span class="text-xs bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded">Armazenagem adicional</span>
-          <span class="text-xs bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded">Omissão de Escala</span>
-        </div>
-      </div>
+      <p class="font-montserrat font-bold text-brand text-2xl uppercase tracking-wide">Sistemas de TI</p>
     </div>
-
-    <!-- Metodologias -->
-    <div class="section-block flex flex-col">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center">
-          <i class="fas fa-book text-purple-600 text-lg"></i>
+    <div class="grid grid-cols-4 gap-5">
+      <!-- SisPAT -->
+      <div class="feature-card" style="border-top: 4px solid #0066CC;">
+        <div class="feature-icon" style="background:#DBEAFE; color:#1E40AF;">
+          <i class="fas fa-boxes-stacked"></i>
         </div>
-        <p class="font-montserrat font-bold text-brand text-xl uppercase">Metodologias e Modelos</p>
+        <p class="font-montserrat font-bold text-brand text-xl mb-2">SisPAT</p>
+        <p class="text-gray-500 text-base font-semibold mb-2">Inventário de Bens dos Portos Organizados</p>
+        <p class="text-gray-600 text-base leading-relaxed flex-1">Plataforma Oracle APEX com API aberta para registro, tombamento e inventário dos bens da União nos portos organizados, com autenticação Gov.BR.</p>
+        <div class="mt-3 flex gap-1">
+          <span class="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-semibold">Inventário de Bens</span>
+          <span class="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-semibold">Bens Reversíveis</span>
+        </div>
       </div>
-      <p class="text-gray-500 text-base mb-5 leading-relaxed">Padronização dos procedimentos para garantir qualidade e consistência.</p>
 
-      <div class="flex flex-col gap-2 flex-1">
-        <div class="bg-white rounded-lg p-3 border border-green-200">
-          <div class="flex items-center justify-between mb-1">
-            <p class="font-semibold text-gray-700 text-base">Padronização — Reclamações de Cobranças Indevidas</p>
-            <span class="status-tag status-done">Concluído</span>
-          </div>
-          <p class="text-gray-500 text-base">Procedimentos de apuração das reclamações de cobranças indevidas que não tiveram acordo entre as partes.</p>
+      <!-- SAI -->
+      <div class="feature-card" style="border-top: 4px solid #0066CC;">
+        <div class="feature-icon" style="background:#DBEAFE; color:#1E40AF;">
+          <i class="fas fa-chart-bar"></i>
         </div>
-
-        <div class="bg-white rounded-lg p-3 border border-gray-100">
-          <div class="flex items-center justify-between mb-1">
-            <p class="font-semibold text-gray-700 text-base">Fiscalização em Contratos de Arrendamento</p>
-            <span class="status-tag status-progress">Em andamento</span>
-          </div>
-          <p class="text-gray-500 text-base">Monitorar cumprimento das obrigações contratuais.</p>
+        <p class="font-montserrat font-bold text-brand text-xl mb-2">SAI</p>
+        <p class="text-gray-500 text-base font-semibold mb-2">Acompanhamento de Investimentos</p>
+        <p class="text-gray-600 text-base leading-relaxed flex-1">Monitorar execução de investimentos em portos e TUPs com registro de cronogramas e análise cruzada.</p>
+        <div class="mt-3 flex gap-1">
+          <span class="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-semibold">Decisões regulatórias</span>
         </div>
+      </div>
 
-        <div class="bg-white rounded-lg p-3 border border-gray-100">
-          <div class="flex items-center justify-between mb-1">
-            <p class="font-semibold text-gray-700 text-base">Manuais de Fiscalização Conjunta</p>
-            <span class="status-tag status-progress">Em andamento</span>
-          </div>
-          <p class="text-gray-500 text-base">GRAT + Unidades Regionais — padronização.</p>
+      <!-- Fiscalização Eletrônica -->
+      <div class="feature-card" style="border-top: 4px solid #0066CC;">
+        <div class="feature-icon" style="background:#DBEAFE; color:#1E40AF;">
+          <i class="fas fa-desktop"></i>
         </div>
-
-        <div class="bg-white rounded-lg p-3 border border-gray-100">
-          <div class="flex items-center justify-between mb-1">
-            <p class="font-semibold text-gray-700 text-base">Modelo — Ferrovia Interna Santos</p>
-            <span class="status-tag status-progress">Em andamento</span>
-          </div>
-          <p class="text-gray-500 text-base">Modelo específico para fiscalização ferroviária portuária.</p>
+        <p class="font-montserrat font-bold text-brand text-xl mb-2">Fiscalização Eletrônica</p>
+        <p class="text-gray-500 text-base font-semibold mb-2">Fiscalização em 3 Níveis</p>
+        <p class="text-gray-600 text-base leading-relaxed flex-1">Monitoramento automatizado via cruzamento de dados de sistemas da ANTAQ e de outros órgãos, com detecção de infrações em tempo real.</p>
+        <div class="mt-3 flex gap-1">
+          <span class="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-semibold">Redução de custos</span>
+          <span class="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-semibold">OCDE</span>
         </div>
+      </div>
 
-        <div class="bg-white rounded-lg p-3 border border-gray-100">
-          <div class="flex items-center justify-between mb-1">
-            <p class="font-semibold text-gray-700 text-base">Revisão Geral de Procedimentos</p>
-            <span class="status-tag status-progress">Em andamento</span>
-          </div>
-          <p class="text-gray-500 text-base">Gerências e Unidades Regionais.</p>
+      <!-- ProTEU -->
+      <div class="feature-card" style="border-top: 4px solid #0066CC;">
+        <div class="feature-icon" style="background:#DBEAFE; color:#1E40AF;">
+          <i class="fas fa-file-invoice-dollar"></i>
         </div>
-
-        <div class="bg-white rounded-lg p-3 border border-gray-100">
-          <div class="flex items-center justify-between mb-1">
-            <p class="font-semibold text-gray-700 text-base">Fiscalização "As Built" — GEF Investimentos</p>
-            <span class="status-tag status-progress">Em andamento</span>
-          </div>
-          <p class="text-gray-500 text-base">Aperfeiçoamento dos procedimentos de fiscalização dos empreendimentos após a efetiva entrega dos investimentos pela regulada.</p>
+        <p class="font-montserrat font-bold text-brand text-xl mb-2">ProTEU</p>
+        <p class="text-gray-500 text-base font-semibold mb-2">Denúncias e Autocomposição — Cadeia de Contêineres</p>
+        <p class="text-gray-600 text-base leading-relaxed flex-1">Registro e acompanhamento de denúncias de cobranças (frete, taxas e sobretaxas) de armadores, intermediários e terminais, com condução do procedimento sumário de autocomposição (Portaria SFC nº 1/2026). A <strong>interface interna</strong> está em operação desde jul./2026, consolidando a base e conduzindo as <strong>350 NACs</strong>; a <strong>interface externa aguarda aprovação da Diretoria</strong>.</p>
+        <div class="mt-3 flex gap-1">
+          <span class="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-semibold">Autocomposição</span>
+          <span class="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-semibold">Carta de Serviços gov.br</span>
         </div>
       </div>
     </div>
@@ -213,7 +168,7 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
   <!-- Footer -->
   <div class="px-16 pb-5 flex justify-between items-center border-t border-gray-100 pt-3 mx-8">
     <p class="text-gray-400 text-sm">Apresentação à Diretoria — SFC · 2026</p>
-    <p class="text-gray-300 text-sm font-mono">6 / 15</p>
+    <p class="text-gray-300 text-sm font-mono">6 / 11</p>
   </div>
 </div>
 <script src="zoom.js"></script>

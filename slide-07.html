@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Entregas Prioritárias — Capacitação & Sistemas</title>
+<title>Cronograma Macro 2026</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
@@ -20,23 +20,81 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
 .header-bar { height:10px; background:#003366; width:100%; }
 .secondary-bar { height:4px; background:#0066CC; width:100%; }
 
-.feature-card {
+.timeline-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: calc(17px * var(--tz));
+}
+.timeline-table th {
+  background: #003366;
+  color: white;
+  padding: 11px 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  font-size: calc(15px * var(--tz));
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.timeline-table th:first-child {
+  border-radius: 10px 0 0 0;
+  text-align: left;
+  padding-left: 16px;
+  min-width: 260px;
+}
+.timeline-table th:last-child {
+  border-radius: 0 10px 0 0;
+}
+.timeline-table td {
+  padding: 7px 6px;
+  border-bottom: 1px solid #F1F5F9;
+  vertical-align: middle;
+}
+.timeline-table td:first-child {
+  padding-left: 16px;
+  font-weight: 600;
+  color: #1E293B;
+}
+.timeline-table tr:last-child td {
+  border-bottom: none;
+}
+.timeline-table tbody tr:hover {
   background: #F8FAFC;
-  border-radius: 14px;
-  padding: 30px;
-  border: 1px solid #E2E8F0;
+}
+.bar {
+  height: 30px;
+  border-radius: 6px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(13px * var(--tz));
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.03em;
 }
-.feature-icon {
-  width: 56px; height: 56px; border-radius: 14px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: calc(26px * var(--tz)); margin-bottom: 16px;
+.bar-blue { background: linear-gradient(90deg, #0066CC, #0088ee); }
+.bar-green { background: linear-gradient(90deg, #16A34A, #22C55E); }
+.bar-purple { background: linear-gradient(90deg, #7C3AED, #A855F7); }
+.bar-orange { background: linear-gradient(90deg, #EA580C, #F97316); }
+.bar-teal { background: linear-gradient(90deg, #0D9488, #14B8A6); }
+.bar-indigo { background: linear-gradient(90deg, #4338CA, #6366F1); }
+.section-label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: calc(16px * var(--tz));
+  color: #003366;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 9px 16px 5px 16px;
+  background: #F0F9FF;
 }
-.info-pill {
-  display: inline-flex; align-items: center; gap: 6px;
-  background: white; border: 1px solid #E2E8F0; border-radius: 20px;
-  padding: 6px 14px; font-size: calc(14px * var(--tz)); color: #475569; font-weight: 600;
+.q-marker {
+  position: relative;
+}
+.q-label {
+  position: absolute; top: -20px; left: 50%; transform: translateX(-50%);
+  font-size: calc(9px * var(--tz)); color: #94A3B8; font-weight: 600;
 }
 </style>
 </head>
@@ -50,8 +108,8 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
     <div class="flex items-center gap-3">
       <div style="width:5px;height:44px;" class="bg-accent"></div>
       <div>
-        <p class="font-montserrat font-bold text-gray-400 text-base uppercase tracking-widest">Plano 2026 — Entregas Prioritárias</p>
-        <p class="text-4xl font-montserrat font-bold text-brand uppercase tracking-tight">Capacitação & Sistemas de TI</p>
+        <p class="font-montserrat font-bold text-gray-400 text-lg uppercase tracking-widest">Plano 2026</p>
+        <p class="text-4xl font-montserrat font-bold text-brand uppercase tracking-tight">Cronograma Macro <span class="text-gray-400 text-2xl font-semibold normal-case">· status em ago/2026</span></p>
       </div>
       <div class="ml-auto flex items-center gap-2">
         <img src="assets/logo-antaq-azul.png" alt="ANTAQ" style="height:32px;">
@@ -60,115 +118,125 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
     </div>
   </div>
 
-  <!-- Content -->
-  <div class="flex-1 px-16 pb-4">
-    <!-- Row 1: Capacitação -->
-    <div class="flex items-center gap-3 mb-4">
-      <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
-        <i class="fas fa-graduation-cap text-green-600 text-sm"></i>
-      </div>
-      <p class="font-montserrat font-bold text-brand text-2xl uppercase tracking-wide">Capacitação</p>
-    </div>
-    <div class="grid grid-cols-2 gap-5 mb-6">
-      <!-- Encontro Nacional -->
-      <div class="feature-card">
-        <div class="feature-icon" style="background:#DCFCE7; color:#166534;">
-          <i class="fas fa-people-group"></i>
-        </div>
-        <p class="font-montserrat font-bold text-brand text-2xl mb-3">Encontro Nacional de Fiscalização (Enafis)</p>
-        <p class="text-gray-600 text-lg leading-relaxed mb-4">Módulo único teórico e prático presencial para padronizar procedimentos e integrar equipes das Unidades Regionais.</p>
-        <div class="flex flex-wrap gap-2 mt-auto">
-          <span class="info-pill"><i class="fas fa-users text-accent"></i> 80 participantes</span>
-          <span class="info-pill"><i class="fas fa-map-pin text-accent"></i> Paranaguá (PR)</span>
-          <span class="info-pill"><i class="fas fa-calendar text-accent"></i> Junho/2026</span>
-          <span class="info-pill"><i class="fas fa-ship text-accent"></i> Visita técnica</span>
-        </div>
-      </div>
+  <!-- Timeline Table -->
+  <div class="flex-1 px-16 pb-4 overflow-hidden">
+    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
+      <table class="timeline-table">
+        <thead>
+          <tr>
+            <th>Atividade / Projeto</th>
+            <th>Jan</th><th>Fev</th><th>Mar</th><th>Abr</th><th>Mai</th><th>Jun</th>
+            <th>Jul</th><th>Ago</th><th>Set</th><th>Out</th><th>Nov</th><th>Dez</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Section: Fiscalizações -->
+          <tr><td colspan="13" class="section-label"><i class="fas fa-clipboard-check mr-2"></i>Fiscalizações & Projetos</td></tr>
+          <tr>
+            <td>Fisc. Temáticas (V, VI, VII)</td>
+            <td colspan="3"><div class="bar bar-blue">Elaboração</div></td>
+            <td colspan="5"><div class="bar bar-blue">Execução</div></td>
+            <td colspan="2"><div class="bar bar-green">Consolidação</div></td>
+            <td colspan="2"></td>
+          </tr>
+          <tr>
+            <td>GEF Investimentos</td>
+            <td colspan="12"><div class="bar bar-indigo">Acompanhamento contínuo ao longo do ano</div></td>
+          </tr>
+          <tr>
+            <td>GEF Contêineres</td>
+            <td colspan="12"><div class="bar bar-indigo">Acompanhamento contínuo ao longo do ano</div></td>
+          </tr>
+          <tr>
+            <td>Metodologias e Manuais</td>
+            <td colspan="10"><div class="bar bar-purple">Desenvolvimento e revisão (até outubro)</div></td>
+            <td colspan="1"><div class="bar bar-purple">Validação</div></td>
+            <td colspan="1"><div class="bar bar-green">Implantação</div></td>
+          </tr>
 
-      <!-- Dia de Fiscal -->
-      <div class="feature-card">
-        <div class="feature-icon" style="background:#FEF3C7; color:#92400E;">
-          <i class="fas fa-chalkboard-teacher"></i>
-        </div>
-        <p class="font-montserrat font-bold text-brand text-2xl mb-3">Dia de Fiscal</p>
-        <p class="text-gray-600 text-lg leading-relaxed mb-4">Curso EAD síncrono (4h) para servidores da Sede e UREs sobre conceitos de fiscalização, legislação e execução fiscalizatória.</p>
-        <div class="flex flex-wrap gap-2 mt-auto">
-          <span class="info-pill"><i class="fas fa-user-plus text-accent"></i> 30 novos servidores</span>
-          <span class="info-pill"><i class="fas fa-video text-accent"></i> EAD síncrono — 4h</span>
-          <span class="info-pill"><i class="fas fa-eye text-accent"></i> Visão sistêmica ANTAQ</span>
-        </div>
-      </div>
-    </div>
+          <!-- Section: Capacitação -->
+          <tr><td colspan="13" class="section-label"><i class="fas fa-graduation-cap mr-2"></i>Capacitação</td></tr>
+          <tr>
+            <td>Encontro Nacional (ENAFIS)</td>
+            <td colspan="3"><div class="bar bar-orange">Aprovação</div></td>
+            <td colspan="2"><div class="bar bar-orange">Logística</div></td>
+            <td colspan="3"></td>
+            <td colspan="1"><div class="bar bar-green" style="font-weight:900;">Realização 21–25/09</div></td>
+            <td colspan="3"></td>
+          </tr>
+          <tr>
+            <td>Dia de Fiscal</td>
+            <td colspan="3"><div class="bar bar-orange">Aprovação</div></td>
+            <td colspan="3"><div class="bar bar-orange">Programação</div></td>
+            <td colspan="3"></td>
+            <td colspan="1"><div class="bar bar-green">Capacitação + Visitas (21–22/10)</div></td>
+            <td colspan="2"></td>
+          </tr>
 
-    <!-- Row 2: Sistemas -->
-    <div class="flex items-center gap-3 mb-4">
-      <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
-        <i class="fas fa-server text-accent text-sm"></i>
-      </div>
-      <p class="font-montserrat font-bold text-brand text-2xl uppercase tracking-wide">Sistemas de TI</p>
-    </div>
-    <div class="grid grid-cols-4 gap-5">
-      <!-- SisPAT -->
-      <div class="feature-card" style="border-top: 4px solid #0066CC;">
-        <div class="feature-icon" style="background:#DBEAFE; color:#1E40AF;">
-          <i class="fas fa-boxes-stacked"></i>
-        </div>
-        <p class="font-montserrat font-bold text-brand text-xl mb-2">SisPAT</p>
-        <p class="text-gray-500 text-base font-semibold mb-2">Inventário de Bens dos Portos Organizados</p>
-        <p class="text-gray-600 text-base leading-relaxed flex-1">Plataforma Oracle APEX com API aberta para registro, tombamento e inventário dos bens da União nos portos organizados, com autenticação Gov.BR.</p>
-        <div class="mt-3 flex gap-1">
-          <span class="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-semibold">Inventário de Bens</span>
-          <span class="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-semibold">Bens Reversíveis</span>
-        </div>
-      </div>
+          <!-- Section: Sistemas -->
+          <tr><td colspan="13" class="section-label"><i class="fas fa-server mr-2"></i>Sistemas de TI</td></tr>
+          <tr>
+            <td>SisPAT — Inventário de Bens</td>
+            <td colspan="4"><div class="bar bar-teal">Pilotos & Divulgação</div></td>
+            <td colspan="3"><div class="bar bar-teal">Submissão — prazo 31/07</div></td>
+            <td colspan="3"><div class="bar bar-green">Fiscalização Inventários</div></td>
+            <td colspan="2"><div class="bar bar-teal">Planejamento Fase 2</div></td>
+          </tr>
+          <tr>
+            <td>SAI — Investimentos</td>
+            <td colspan="6"><div class="bar bar-teal">Desenvolvimento F1</div></td>
+            <td colspan="2"><div class="bar bar-teal">Homologação ✓</div></td>
+            <td colspan="1"><div class="bar bar-green" style="font-weight:900;">Lançamento 17/09</div></td>
+            <td colspan="3"><div class="bar bar-teal">Operação e evolução (FIPO, prazos)</div></td>
+          </tr>
+          <tr>
+            <td>SFIS Novo — Controle Fiscal</td>
+            <td colspan="3"><div class="bar bar-teal">Base & Migração</div></td>
+            <td colspan="5"><div class="bar bar-teal">Módulos APEX</div></td>
+            <td colspan="2"><div class="bar bar-teal">Testes & UAT</div></td>
+            <td colspan="1"><div class="bar bar-green">Go-Live</div></td>
+            <td colspan="1"></td>
+          </tr>
+          <tr>
+            <td>Fiscalização Eletrônica (3 Níveis)</td>
+            <td colspan="6"><div class="bar bar-teal">Mapeamento de normas</div></td>
+            <td colspan="4"><div class="bar bar-teal">Desenvolvimento do sistema</div></td>
+            <td colspan="2"><div class="bar bar-green">Implantação (3 obrigações)</div></td>
+          </tr>
+          <tr>
+            <td>ProTEU — Denúncias e Autocomposição</td>
+            <td colspan="7"><div class="bar bar-green">Fases 1–5 — Formulário e gestão do fiscal ✓</div></td>
+            <td colspan="3"><div class="bar bar-teal">Fase 6 — Pós-denúncia</div></td>
+            <td colspan="2"><div class="bar bar-teal">Consolidação</div></td>
+          </tr>
 
-      <!-- SAI -->
-      <div class="feature-card" style="border-top: 4px solid #0066CC;">
-        <div class="feature-icon" style="background:#DBEAFE; color:#1E40AF;">
-          <i class="fas fa-chart-bar"></i>
-        </div>
-        <p class="font-montserrat font-bold text-brand text-xl mb-2">SAI</p>
-        <p class="text-gray-500 text-base font-semibold mb-2">Acompanhamento de Investimentos</p>
-        <p class="text-gray-600 text-base leading-relaxed flex-1">Monitorar execução de investimentos em portos e TUPs com registro de cronogramas e análise cruzada.</p>
-        <div class="mt-3 flex gap-1">
-          <span class="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-semibold">Decisões regulatórias</span>
-        </div>
-      </div>
-
-      <!-- Fiscalização Eletrônica -->
-      <div class="feature-card" style="border-top: 4px solid #0066CC;">
-        <div class="feature-icon" style="background:#DBEAFE; color:#1E40AF;">
-          <i class="fas fa-desktop"></i>
-        </div>
-        <p class="font-montserrat font-bold text-brand text-xl mb-2">Fiscalização Eletrônica</p>
-        <p class="text-gray-500 text-base font-semibold mb-2">Fiscalização em 3 Níveis</p>
-        <p class="text-gray-600 text-base leading-relaxed flex-1">Monitoramento automatizado via cruzamento de dados de sistemas da ANTAQ e de outros órgãos, com detecção de infrações em tempo real.</p>
-        <div class="mt-3 flex gap-1">
-          <span class="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-semibold">Redução de custos</span>
-          <span class="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-semibold">OCDE</span>
-        </div>
-      </div>
-
-      <!-- ProTEU -->
-      <div class="feature-card" style="border-top: 4px solid #0066CC;">
-        <div class="feature-icon" style="background:#DBEAFE; color:#1E40AF;">
-          <i class="fas fa-file-invoice-dollar"></i>
-        </div>
-        <p class="font-montserrat font-bold text-brand text-xl mb-2">ProTEU</p>
-        <p class="text-gray-500 text-base font-semibold mb-2">Denúncias e Autocomposição — Cadeia de Contêineres</p>
-        <p class="text-gray-600 text-base leading-relaxed flex-1">Registro e acompanhamento de denúncias de cobranças (frete, taxas e sobretaxas) de armadores, intermediários e terminais, com condução do procedimento sumário de autocomposição (Portaria SFC nº 1/2026). A <strong>interface interna</strong> está em operação desde jul./2026, consolidando a base e conduzindo as <strong>350 NACs</strong>; a <strong>interface externa aguarda aprovação da Diretoria</strong>.</p>
-        <div class="mt-3 flex gap-1">
-          <span class="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-semibold">Autocomposição</span>
-          <span class="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-semibold">Carta de Serviços gov.br</span>
-        </div>
-      </div>
+          <!-- Section: Estrutura -->
+          <tr><td colspan="13" class="section-label"><i class="fas fa-building mr-2"></i>Necessidades Estruturais</td></tr>
+          <tr>
+            <td>Marco Normativo — Res. 135 e 138/2026</td>
+            <td colspan="6"><div class="bar bar-purple">Elaboração e tramitação</div></td>
+            <td colspan="2"><div class="bar bar-green" style="font-weight:900;">✓ Publicadas 16/07 e 19/08</div></td>
+            <td colspan="4"><div class="bar bar-purple">Atos complementares da SFC · vigência 14/10</div></td>
+          </tr>
+          <tr>
+            <td>Valorização de Cargos</td>
+            <td colspan="12"><div class="bar bar-purple">Análise, propostas e tramitação em instâncias externas</div></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
   <!-- Footer -->
   <div class="px-16 pb-5 flex justify-between items-center border-t border-gray-100 pt-3 mx-8">
     <p class="text-gray-400 text-sm">Apresentação à Diretoria — SFC · 2026</p>
-    <p class="text-gray-300 text-sm font-mono">7 / 15</p>
+    <a href="https://projetos-sfc-2026-production.up.railway.app/" target="_blank" rel="noopener"
+       style="display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,#003366,#0066CC); color:white; padding:10px 24px; border-radius:10px; font-family:'Montserrat',sans-serif; font-weight:700; font-size:calc(14px * var(--tz)); text-decoration:none; letter-spacing:0.03em; transition:all 0.2s; box-shadow:0 4px 12px rgba(0,51,102,0.3);"
+       onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 20px rgba(0,51,102,0.4)'"
+       onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 12px rgba(0,51,102,0.3)'">
+      <i class="fas fa-external-link-alt"></i> Ver Cronograma Interativo
+    </a>
+    <p class="text-gray-300 text-sm font-mono">7 / 11</p>
   </div>
 </div>
 <script src="zoom.js"></script>

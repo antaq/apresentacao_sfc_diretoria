@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>SAI em Lançamento</title>
+<title>Encerramento — SFC 2026</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
@@ -12,166 +12,102 @@
 <style>
 body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif; }
 .slide { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; overflow:hidden;
-  background: linear-gradient(135deg, #001a33 0%, #003366 50%, #004d99 100%); }
+  background: linear-gradient(135deg, #001a33 0%, #003366 40%, #004d99 100%); }
 .font-montserrat { font-family:'Montserrat',sans-serif; }
+.gold { color: #FFD700; }
 
-.cyan-glow {
-  text-shadow: 0 0 40px rgba(56,189,248,0.35), 0 0 80px rgba(56,189,248,0.12);
-}
-.card-glass {
-  background: rgba(255,255,255,0.07);
+.closing-card {
+  background: rgba(255,255,255,0.06);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 16px;
-  padding: 44px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  padding: 24px 32px;
+  display: flex; align-items: center; gap: 20px;
 }
-.impact-item {
-  display: flex; align-items: flex-start; gap: 20px; margin-bottom: 28px;
-}
-.impact-icon {
-  width: 64px; height: 64px; border-radius: 16px;
+.closing-icon {
+  width: 56px; height: 56px; border-radius: 14px;
   display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-  background: rgba(56,189,248,0.15);
-  color: #38BDF8;
-  font-size: calc(26px * var(--tz));
+  font-size: calc(26px * var(--tz)); flex-shrink: 0;
+  background: rgba(255,215,0,0.15); color: #FFD700;
 }
 </style>
 </head>
 <body>
 <div class="slide">
-  <!-- Decorative elements -->
-  <div class="absolute top-0 right-0 w-96 h-96 rounded-full opacity-5" style="background: radial-gradient(circle, #38BDF8 0%, transparent 70%); transform: translate(30%, -30%);"></div>
-  <div class="absolute bottom-0 left-0 w-80 h-80 rounded-full opacity-5" style="background: radial-gradient(circle, #0066CC 0%, transparent 70%); transform: translate(-30%, 30%);"></div>
+  <!-- Decorative circles -->
+  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" style="width:600px; height:600px; border-radius:50%; border:1px solid rgba(255,215,0,0.06);"></div>
+  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" style="width:450px; height:450px; border-radius:50%; border:1px solid rgba(255,215,0,0.04);"></div>
 
-  <!-- Cyan top accent -->
-  <div style="height:6px; background: linear-gradient(90deg, #0EA5E9, #38BDF8); width:100%;"></div>
+  <!-- Gold top accent -->
+  <div style="height:6px; background: linear-gradient(90deg, #FFD700, #FFA500); width:100%;"></div>
 
-  <!-- Header -->
-  <div class="px-16 pt-12 pb-4 relative z-10">
-    <div class="flex items-center gap-3">
-      <div style="width:5px;height:44px; background:#38BDF8;"></div>
-      <div>
-        <p class="font-montserrat font-bold text-gray-400 text-xl uppercase tracking-widest">Entrega Estratégica 2026</p>
-        <p class="text-5xl font-montserrat font-black text-white uppercase tracking-tight cyan-glow">SAI em Lançamento <span style="color:#38BDF8;">17/09</span></p>
+  <!-- Content -->
+  <div class="relative z-10 flex flex-col items-center justify-center flex-1 px-16">
+    <!-- Trophy icon -->
+    <div class="w-20 h-20 rounded-full flex items-center justify-center mb-6" style="background: linear-gradient(135deg, #FFD700, #FFA500); box-shadow: 0 0 50px rgba(255,215,0,0.2);">
+      <i class="fas fa-handshake text-white text-3xl"></i>
+    </div>
+
+    <!-- Title -->
+    <p class="font-montserrat font-black text-white text-5xl text-center mb-2">Obrigado!</p>
+    <div style="width:80px; height:4px; background:#FFD700; margin: 16px auto 24px;"></div>
+    <p class="text-2xl text-gray-300 font-light text-center leading-relaxed max-w-2xl mb-8">
+      Superintendência de Fiscalização e<br/>
+      Coordenação das Unidades Regionais — <strong class="text-white">SFC</strong>
+    </p>
+
+    <!-- Summary pills -->
+    <div class="flex gap-4 mb-10">
+      <div class="closing-card">
+        <div class="closing-icon"><i class="fas fa-clipboard-check"></i></div>
+        <div>
+          <p class="text-white font-montserrat font-bold text-xl">7 Fiscalizações</p>
+          <p class="text-gray-400 text-base">Temáticas em execução</p>
+        </div>
       </div>
-      <div class="ml-auto">
-        <div class="w-20 h-20 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #0EA5E9, #38BDF8); box-shadow: 0 0 40px rgba(56,189,248,0.3);">
-          <i class="fas fa-rocket text-white text-3xl"></i>
+      <div class="closing-card">
+        <div class="closing-icon"><i class="fas fa-users-cog"></i></div>
+        <div>
+          <p class="text-white font-montserrat font-bold text-xl">2 GEFs Ativos</p>
+          <p class="text-gray-400 text-base">Investimentos e Contêineres</p>
+        </div>
+      </div>
+      <div class="closing-card">
+        <div class="closing-icon"><i class="fas fa-server"></i></div>
+        <div>
+          <p class="text-white font-montserrat font-bold text-xl">4 Sistemas</p>
+          <p class="text-gray-400 text-base">SisPAT, SAI, ProTEU e Fisc. Eletrônica</p>
+        </div>
+      </div>
+      <div class="closing-card">
+        <div class="closing-icon"><i class="fas fa-people-group"></i></div>
+        <div>
+          <p class="text-white font-montserrat font-bold text-xl">110+ Capacitados</p>
+          <p class="text-gray-400 text-base">Encontro Nacional + Dia de Fiscal</p>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Main Content -->
-  <div class="flex-1 px-16 pb-6 relative z-10 flex gap-12">
-    <!-- Left: Main delivery -->
-    <div class="flex-1 flex flex-col justify-center">
-      <div class="card-glass mb-8">
-        <div class="flex items-center gap-5 mb-6">
-          <div class="rounded-xl flex items-center justify-center" style="width:72px;height:72px;background: linear-gradient(135deg, #0EA5E9, #38BDF8);">
-            <i class="fas fa-chart-line text-white text-3xl"></i>
-          </div>
-          <div>
-            <p class="font-montserrat font-black text-white text-4xl">SAI — Acompanhamento de Investimentos</p>
-            <p style="color:#38BDF8;" class="font-montserrat font-semibold text-xl">Contratos de Arrendamento e Terminais de Uso Privado</p>
-          </div>
-        </div>
-        <p class="text-gray-300 text-xl leading-relaxed">
-          O SAI converte o <strong class="text-white">RAPIR em PDF estático</strong> — hoje enviado contrato a contrato — em <strong class="text-white">base de dados estruturada</strong>, com fluxo de aprovação em etapas, notificações automáticas, correção monetária aplicada pelo índice do próprio contrato, trilha de auditoria completa e API pública para integração dos sistemas de obras das reguladas. Atende à <strong class="text-white">Recomendação I da Auditoria nº 06/2022</strong>, pendente desde 2022.
-        </p>
-
-        <!-- Panorama da carteira -->
-        <div class="mt-6 pt-5" style="border-top: 1px solid rgba(255,255,255,0.15);">
-          <div class="flex items-baseline justify-between mb-4">
-            <p class="font-montserrat font-bold text-gray-300 text-lg uppercase tracking-wider">
-              <i class="fas fa-chart-pie mr-2" style="color:#38BDF8;"></i>Carteira Já Cadastrada no Sistema
-            </p>
-            <p class="text-gray-500 text-sm font-mono">SAI em produção · posição em 19/08/2026</p>
-          </div>
-          <div class="grid grid-cols-4 gap-6">
-            <div>
-              <p class="font-montserrat font-black" style="font-size:calc(38px * var(--tz)); line-height:1; color:#38BDF8;">79</p>
-              <p class="text-gray-400 text-sm mt-2 leading-snug">contratos com obrigação<br/>de investimento</p>
-            </div>
-            <div>
-              <p class="font-montserrat font-black text-white" style="font-size:calc(38px * var(--tz)); line-height:1;">R$ 56,9 bi</p>
-              <p class="text-gray-400 text-sm mt-2 leading-snug">investimento global sob<br/>acompanhamento</p>
-            </div>
-            <div>
-              <p class="font-montserrat font-black text-white" style="font-size:calc(38px * var(--tz)); line-height:1;">75</p>
-              <p class="text-gray-400 text-sm mt-2 leading-snug">empresas reguladas<br/>na carteira</p>
-            </div>
-            <div>
-              <p class="font-montserrat font-black text-white" style="font-size:calc(38px * var(--tz)); line-height:1;">5</p>
-              <p class="text-gray-400 text-sm mt-2 leading-snug">perfis com segregação<br/>de funções no fluxo</p>
-            </div>
-          </div>
-          <div class="flex items-baseline justify-between mt-5 mb-2">
-            <p class="text-gray-400 text-base">Composição da carteira &mdash; <strong class="text-gray-200">28 TUPs</strong> (R$ 38,9 bi) e <strong class="text-gray-200">51 arrendamentos</strong> (R$ 18,0 bi)</p>
-          </div>
-          <div class="rounded-full overflow-hidden flex" style="background: rgba(255,255,255,0.12); height: 12px;">
-            <div style="width: 68.4%; height: 100%; background: linear-gradient(90deg, #0EA5E9, #38BDF8);"></div>
-            <div style="width: 31.6%; height: 100%; background: linear-gradient(90deg, #14B8A6, #5EEAD4);"></div>
-          </div>
-          <p class="text-gray-400 text-base mt-3 leading-relaxed">Sistema <strong class="text-gray-200">concluído e homologado</strong>, com integração ao Login Único gov.br validada (nível prata ou ouro). Entrada em operação reprogramada de 20/08 para <strong class="text-gray-200">17/09/2026</strong>, para coincidir com o lançamento e assegurar prazo ao cadastramento dos representantes.</p>
-        </div>
-      </div>
-
-      <!-- Workshop de lançamento -->
-      <div class="card-glass" style="border-color: rgba(56,189,248,0.25);">
-        <div class="flex items-center gap-3 mb-2">
-          <i class="fas fa-calendar-check" style="color:#38BDF8;"></i>
-          <p class="font-montserrat font-bold text-gray-300 text-lg uppercase tracking-wider">Workshop de Lançamento &mdash; 17 de setembro de 2026</p>
-        </div>
-        <p class="text-gray-400 text-lg"><strong class="text-gray-200">14h às 18h, auditório do DNIT (Brasília/DF)</strong> — 200 vagas presenciais e transmissão ao vivo. Apresentação do sistema, do cadastramento e das regras de envio, com espaço para dúvidas normativas e de TI. As reguladas devem indicar seus representantes até <strong class="text-gray-200">04/09</strong>.</p>
-      </div>
-    </div>
-
-    <!-- Right: O que muda -->
-    <div style="width:480px;" class="flex flex-col justify-center">
-      <p class="font-montserrat font-bold text-white text-2xl uppercase tracking-wider mb-8">
-        <i class="fas fa-bolt mr-2" style="color:#38BDF8;"></i>O Que Muda
-      </p>
-
-      <div class="impact-item">
-        <div class="impact-icon"><i class="fas fa-database"></i></div>
-        <div>
-          <p class="text-white font-bold text-2xl">Fim do RAPIR em PDF</p>
-          <p class="text-gray-400 text-lg">Dado estruturado e reaproveitável, com validações automáticas no lugar de digitação e conferência manuais.</p>
-        </div>
-      </div>
-
-      <div class="impact-item">
-        <div class="impact-icon"><i class="fas fa-gauge-high"></i></div>
-        <div>
-          <p class="text-white font-bold text-2xl">IPT — Priorização por Risco</p>
-          <p class="text-gray-400 text-lg">Índice de Performance para Término classifica cada contrato em Em dia, Atenção, Alerta ou Crítico.</p>
-        </div>
-      </div>
-
-      <div class="impact-item">
-        <div class="impact-icon"><i class="fas fa-fingerprint"></i></div>
-        <div>
-          <p class="text-white font-bold text-2xl">Trilha de Auditoria</p>
-          <p class="text-gray-400 text-lg">Usuário, data, campo, valor anterior e novo — prova apta a instruir processo sancionador.</p>
-        </div>
-      </div>
-
-      <div class="impact-item">
-        <div class="impact-icon"><i class="fas fa-clipboard-check"></i></div>
-        <div>
-          <p class="text-white font-bold text-2xl">Painel Gerencial da Carteira</p>
-          <p class="text-gray-400 text-lg">Visão consolidada, georreferenciada e corrigida monetariamente para a Diretoria e os órgãos de controle.</p>
-        </div>
-      </div>
+    <!-- Quote -->
+    <div class="max-w-3xl text-center">
+      <p class="text-gray-400 text-xl italic leading-relaxed">"Promover o desenvolvimento sustentável do setor de transportes aquaviários, beneficiando a sociedade por meio de regulação eficiente, fiscalização responsiva, outorgas estratégicas e estudos inovadores."</p>
+      <p class="gold text-sm font-montserrat font-bold uppercase tracking-widest mt-3">Missão ANTAQ — PEI 2025–2028</p>
     </div>
   </div>
 
   <!-- Footer -->
-  <div class="relative z-10 px-16 pb-6 flex justify-between items-center border-t border-gray-700 pt-4 mx-8">
-    <p class="text-gray-500 text-sm">Apresentação à Diretoria — SFC · 2026</p>
-    <p class="text-gray-500 text-sm font-mono">11 / 15</p>
+  <div class="relative z-10 px-16 pb-8 flex justify-between items-center border-t border-gray-700 pt-6 mx-8">
+    <div class="flex items-center gap-6 text-gray-500 text-xs">
+      <span><i class="fas fa-globe mr-1"></i> www.gov.br/antaq</span>
+      <span><i class="fab fa-linkedin mr-1"></i> linkedin.com/company/antaq</span>
+      <span><i class="fab fa-instagram mr-1"></i> @antaq_oficial</span>
+    </div>
+    <p class="text-gray-500 text-sm font-montserrat font-bold tracking-wider">PPF 2025–2028 | Projetos SFC 2026</p>
+  </div>
+
+  <!-- Watermark -->
+  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" style="z-index:0; opacity:0.03;">
+    <img src="assets/logo-antaq-branca-vertical.png" alt="" style="height:55vh;">
   </div>
 </div>
 <script src="zoom.js"></script>
